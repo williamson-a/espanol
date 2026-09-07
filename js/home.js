@@ -2,7 +2,7 @@
 // the page says something real rather than just being a menu.
 
 import { DATA_URL } from "./config.js";
-import { getEntries } from "./store.js";
+import { getEntries, getAnswered } from "./store.js";
 import { QUESTIONS, questionIndexForToday } from "./questions.js";
 import { initSettings } from "./settings.js";
 
@@ -30,9 +30,11 @@ initSettings({ openWhenEmpty: false });
   }
 })();
 
-// --- Mi día card
-document.getElementById("questionMeta").textContent =
-  QUESTIONS[questionIndexForToday()].q;
+// --- Mi día card: progress once you've started, otherwise the next question
+const answered = getAnswered();
+document.getElementById("questionMeta").textContent = answered.size
+  ? `${answered.size} of ${QUESTIONS.length} answered`
+  : QUESTIONS[questionIndexForToday()].q;
 
 // --- Mis frases card
 const count = getEntries().length;

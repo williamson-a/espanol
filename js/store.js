@@ -56,6 +56,37 @@ export function deleteEntry(id) {
   saveEntries(getEntries().filter((e) => e.id !== id));
 }
 
+/* --- which "Mi día" questions have been answered, so the set can be worked
+       through across sessions rather than restarting every visit --- */
+
+export function getAnswered() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEYS.routineDone);
+    const parsed = raw ? JSON.parse(raw) : [];
+    return new Set(Array.isArray(parsed) ? parsed : []);
+  } catch {
+    return new Set();
+  }
+}
+
+export function markAnswered(index) {
+  const answered = getAnswered();
+  answered.add(index);
+  try {
+    localStorage.setItem(STORAGE_KEYS.routineDone, JSON.stringify([...answered]));
+  } catch {
+    /* ignore */
+  }
+}
+
+export function resetAnswered() {
+  try {
+    localStorage.removeItem(STORAGE_KEYS.routineDone);
+  } catch {
+    /* ignore */
+  }
+}
+
 export function clearEntries() {
   saveEntries([]);
 }

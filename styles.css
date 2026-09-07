@@ -115,6 +115,32 @@ nav a:hover { text-decoration: underline; }
   margin-bottom: 2px;
 }
 
+/* --- progress through the question set --- */
+.progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+.progress-bar {
+  flex: 1;
+  height: 3px;
+  background: var(--card-2);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.progress-fill {
+  display: block;
+  height: 100%;
+  background: var(--good);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
 /* --- "Mi día" question card --- */
 .question-card .question-es {
   font-size: 1.25rem;

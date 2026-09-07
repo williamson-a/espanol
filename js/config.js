@@ -13,6 +13,7 @@ export const MODEL = "claude-haiku-4-5";
 export const STORAGE_KEYS = {
   apiKey: "laliga_spanish.apiKey",
   entries: "laliga_spanish.entries",
+  routineDone: "laliga_spanish.routineDone",
 };
 
 export const DATA_URL = "data/today.json";
