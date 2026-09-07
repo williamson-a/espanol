@@ -2,13 +2,19 @@
 
 A tiny static site for learning Spanish from yesterday's La Liga results.
 
-Three pages, all sharing one write → correct → save loop:
+Four pages, all sharing one write → correct → save loop:
 
-- **index.html** (*Partidos*) — each match as 3 present-tense Spanish sentences
+- **index.html** (*Inicio*) — home page; pick a mode. Each card shows live
+  context: today's match count, the current routine question, your sentence total.
+- **partidos.html** (*La Liga*) — each match as 3 present-tense Spanish sentences
   (tap to reveal the English), a word bank, and a box where you write one sentence
   about the result.
 - **rutina.html** (*Mi día*) — an A1 question about your own daily routine, with a
-  word bank and a sentence starter. 24 questions, rotating by date.
+  word bank and a grammar hint. 24 questions, rotating by date.
+
+  Word banks list **infinitives only** — never a conjugated form. Conjugating is
+  the exercise, so `despertarse` appears but `me despierto` never does; the hint
+  states the rule ("reflexive, and stem-changing e → ie") without applying it.
 - **practice.html** (*Mis frases*) — every sentence you've written, with its
   correction, tagged by which page it came from.
 

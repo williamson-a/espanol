@@ -58,6 +58,63 @@ nav a {
 }
 nav a:hover { text-decoration: underline; }
 
+/* --- home page choice cards --- */
+.home-header { margin-bottom: 6px; }
+.home-header h1 { font-size: 1.9rem; }
+
+.choice {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px;
+  margin-bottom: 12px;
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color 0.15s, transform 0.15s;
+}
+.choice:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+.choice-icon { font-size: 1.9rem; line-height: 1; }
+.choice-body { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+.choice-title { font-size: 1.15rem; font-weight: 700; letter-spacing: -0.01em; }
+.choice-desc { color: var(--muted); font-size: 0.88rem; margin-top: 1px; }
+.choice-meta {
+  color: var(--accent);
+  font-size: 0.8rem;
+  margin-top: 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.choice-arrow { color: var(--muted); font-size: 1.2rem; }
+.choice-quiet { background: transparent; }
+.choice-quiet .choice-meta { color: var(--muted); }
+
+/* --- grammar hint on the "Mi día" card --- */
+.grammar-hint {
+  margin: 12px 0 0;
+  padding: 9px 12px;
+  background: var(--card-2);
+  border-left: 2px solid var(--good);
+  border-radius: 0 8px 8px 0;
+  font-size: 0.87rem;
+  color: var(--muted);
+}
+.grammar-hint .hint-label {
+  display: block;
+  color: var(--good);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 2px;
+}
+
 /* --- "Mi día" question card --- */
 .question-card .question-es {
   font-size: 1.25rem;

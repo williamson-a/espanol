@@ -3,19 +3,47 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>La Liga en español</title>
+    <title>Español</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="wrap">
-      <header class="site">
-        <h1><span class="ball">⚽</span> La Liga en español</h1>
-        <nav>
-          <a href="rutina.html">Mi día</a>
-          <a href="practice.html">Mis frases →</a>
-        </nav>
+      <header class="site home-header">
+        <h1>Español</h1>
       </header>
-      <p class="subtitle" id="subtitle">Yesterday's results, in beginner Spanish.</p>
+      <p class="subtitle">Present-tense practice, one sentence at a time.</p>
+
+      <main>
+        <a class="choice" href="partidos.html">
+          <span class="choice-icon">⚽</span>
+          <span class="choice-body">
+            <span class="choice-title">La Liga</span>
+            <span class="choice-desc">Yesterday's results in beginner Spanish</span>
+            <span class="choice-meta" id="matchMeta">loading…</span>
+          </span>
+          <span class="choice-arrow">→</span>
+        </a>
+
+        <a class="choice" href="rutina.html">
+          <span class="choice-icon">☀️</span>
+          <span class="choice-body">
+            <span class="choice-title">Mi día</span>
+            <span class="choice-desc">Answer a question about your own day</span>
+            <span class="choice-meta" id="questionMeta"></span>
+          </span>
+          <span class="choice-arrow">→</span>
+        </a>
+
+        <a class="choice choice-quiet" href="practice.html">
+          <span class="choice-icon">📝</span>
+          <span class="choice-body">
+            <span class="choice-title">Mis frases</span>
+            <span class="choice-desc">Everything you've written, with corrections</span>
+            <span class="choice-meta" id="entryMeta"></span>
+          </span>
+          <span class="choice-arrow">→</span>
+        </a>
+      </main>
 
       <details class="settings" id="settings">
         <summary>Settings — Anthropic API key</summary>
@@ -32,14 +60,11 @@
         <div class="key-status" id="keyStatus"></div>
         <p class="hint">
           Stored only in this browser's localStorage and sent directly to the
-          Anthropic API when you submit a sentence. Use a key scoped to a small
-          spend limit.
+          Anthropic API when you submit a sentence.
         </p>
       </details>
-
-      <main id="matches"></main>
     </div>
 
-    <script type="module" src="js/today.js"></script>
+    <script type="module" src="js/home.js"></script>
   </body>
 </html>

@@ -1,7 +1,8 @@
 // "Mi día" page: answer a daily-routine question in the present tense.
 
 import { QUESTIONS, questionIndexForToday } from "./questions.js";
-import { getApiKey, setApiKey, addEntry } from "./store.js";
+import { getApiKey, addEntry } from "./store.js";
+import { initSettings } from "./settings.js";
 import { correctSentence } from "./anthropic.js";
 
 const el = (tag, props = {}, ...kids) => {
@@ -10,37 +11,6 @@ const el = (tag, props = {}, ...kids) => {
   return node;
 };
 
-/* ---------- settings / api key ---------- */
-
-function initSettings() {
-  const input = document.getElementById("apiKeyInput");
-  const status = document.getElementById("keyStatus");
-  const details = document.getElementById("settings");
-
-  const render = () => {
-    const key = getApiKey();
-    if (key) {
-      status.className = "key-status set";
-      status.textContent = `Key saved (…${key.slice(-4)}).`;
-    } else {
-      status.className = "key-status unset";
-      status.textContent = "No key saved yet — add one to get corrections.";
-      details.open = true;
-    }
-  };
-
-  document.getElementById("saveKey").addEventListener("click", () => {
-    setApiKey(input.value);
-    input.value = "";
-    render();
-  });
-  document.getElementById("clearKey").addEventListener("click", () => {
-    setApiKey("");
-    render();
-  });
-
-  render();
-}
 
 /* ---------- the question card ---------- */
 
@@ -50,7 +20,7 @@ function render() {
   const question = QUESTIONS[index];
   const container = document.getElementById("card");
 
-  const textarea = el("textarea", { placeholder: question.start });
+  const textarea = el("textarea", { placeholder: "Escribe tu respuesta…" });
   const submit = el("button", { textContent: "Get feedback" });
   const status = el("span", { className: "status" });
   const feedback = el("div", { className: "feedback", hidden: true });
@@ -143,9 +113,15 @@ function render() {
       )
     )),
     el(
+      "p",
+      { className: "grammar-hint" },
+      el("span", { className: "hint-label", textContent: "hint" }),
+      el("span", { textContent: question.hint })
+    ),
+    el(
       "div",
       { className: "practice" },
-      el("label", {}, "Your answer — try starting with ", el("code", { textContent: question.start })),
+      el("label", { textContent: "Your answer — conjugate the verb yourself" }),
       textarea,
       el("div", { className: "actions" }, submit, next, status),
       feedback

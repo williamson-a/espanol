@@ -1,7 +1,8 @@
 // index page: render today's matches and run the write → correct → save loop.
 
 import { DATA_URL } from "./config.js";
-import { getApiKey, setApiKey, addEntry } from "./store.js";
+import { getApiKey, addEntry } from "./store.js";
+import { initSettings } from "./settings.js";
 import { correctSentence } from "./anthropic.js";
 
 const el = (tag, props = {}, ...kids) => {
@@ -10,37 +11,6 @@ const el = (tag, props = {}, ...kids) => {
   return node;
 };
 
-/* ---------- settings / api key ---------- */
-
-function initSettings() {
-  const input = document.getElementById("apiKeyInput");
-  const status = document.getElementById("keyStatus");
-  const details = document.getElementById("settings");
-
-  const render = () => {
-    const key = getApiKey();
-    if (key) {
-      status.className = "key-status set";
-      status.textContent = `Key saved (…${key.slice(-4)}).`;
-    } else {
-      status.className = "key-status unset";
-      status.textContent = "No key saved yet — add one to get corrections.";
-      details.open = true;
-    }
-  };
-
-  document.getElementById("saveKey").addEventListener("click", () => {
-    setApiKey(input.value);
-    input.value = "";
-    render();
-  });
-  document.getElementById("clearKey").addEventListener("click", () => {
-    setApiKey("");
-    render();
-  });
-
-  render();
-}
 
 /* ---------- match rendering ---------- */
 
