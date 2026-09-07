@@ -27,10 +27,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
+          cache: npm
 
-      # No lockfile is committed, so `npm install` rather than `npm ci`.
+      # package-lock.json is committed, so this is an exact, reproducible install.
       - name: Install dependencies
-        run: npm install --omit=dev
+        run: npm ci --omit=dev
 
       - name: Generate data/today.json
         env:
