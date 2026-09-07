@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>La Liga en español</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="site">
+        <h1><span class="ball">⚽</span> La Liga en español</h1>
+        <nav><a href="practice.html">Mis frases →</a></nav>
+      </header>
+      <p class="subtitle" id="subtitle">Yesterday's results, in beginner Spanish.</p>
+
+      <details class="settings" id="settings">
+        <summary>Settings — Anthropic API key</summary>
+        <div class="row">
+          <input
+            type="password"
+            id="apiKeyInput"
+            placeholder="sk-ant-..."
+            autocomplete="off"
+          />
+          <button id="saveKey">Save</button>
+          <button class="secondary" id="clearKey">Clear</button>
+        </div>
+        <div class="key-status" id="keyStatus"></div>
+        <p class="hint">
+          Stored only in this browser's localStorage and sent directly to the
+          Anthropic API when you submit a sentence. Use a key scoped to a small
+          spend limit.
+        </p>
+      </details>
+
+      <main id="matches"></main>
+    </div>
+
+    <script type="module" src="js/today.js"></script>
+  </body>
+</html>

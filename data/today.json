@@ -1,0 +1,65 @@
+{
+  "date": "2026-09-05",
+  "competition": "La Liga",
+  "generatedAt": "2026-09-06T06:00:00Z",
+  "source": "sample data (hardcoded) — replace with scripts/generate.mjs output",
+  "matches": [
+    {
+      "id": "2026-09-05-real-madrid-getafe",
+      "home": "Real Madrid",
+      "away": "Getafe",
+      "score": { "home": 2, "away": 1 },
+      "sentences": [
+        { "es": "El Real Madrid juega en casa.", "en": "Real Madrid plays at home." },
+        { "es": "El Real Madrid marca dos goles.", "en": "Real Madrid scores two goals." },
+        { "es": "El Getafe pierde el partido.", "en": "Getafe loses the match." }
+      ],
+      "wordBank": [
+        { "es": "el partido", "en": "the match" },
+        { "es": "el gol", "en": "the goal" },
+        { "es": "marcar", "en": "to score" },
+        { "es": "ganar", "en": "to win" },
+        { "es": "perder", "en": "to lose" },
+        { "es": "en casa", "en": "at home" }
+      ]
+    },
+    {
+      "id": "2026-09-05-barcelona-sevilla",
+      "home": "FC Barcelona",
+      "away": "Sevilla",
+      "score": { "home": 3, "away": 3 },
+      "sentences": [
+        { "es": "El Barcelona y el Sevilla empatan.", "en": "Barcelona and Sevilla draw." },
+        { "es": "Cada equipo marca tres goles.", "en": "Each team scores three goals." },
+        { "es": "El partido termina en empate.", "en": "The match ends in a draw." }
+      ],
+      "wordBank": [
+        { "es": "el equipo", "en": "the team" },
+        { "es": "empatar", "en": "to draw / to tie" },
+        { "es": "el empate", "en": "the draw / the tie" },
+        { "es": "cada", "en": "each" },
+        { "es": "terminar", "en": "to end" },
+        { "es": "tres", "en": "three" }
+      ]
+    },
+    {
+      "id": "2026-09-05-atletico-athletic",
+      "home": "Atlético de Madrid",
+      "away": "Athletic Club",
+      "score": { "home": 1, "away": 0 },
+      "sentences": [
+        { "es": "El Atlético de Madrid gana el partido.", "en": "Atlético de Madrid wins the match." },
+        { "es": "El equipo local marca un gol.", "en": "The home team scores one goal." },
+        { "es": "El Athletic Club no marca.", "en": "Athletic Club does not score." }
+      ],
+      "wordBank": [
+        { "es": "ganar", "en": "to win" },
+        { "es": "local", "en": "home (team)" },
+        { "es": "un gol", "en": "one goal" },
+        { "es": "no", "en": "not" },
+        { "es": "el equipo", "en": "the team" },
+        { "es": "jugar", "en": "to play" }
+      ]
+    }
+  ]
+}
