@@ -10,6 +10,15 @@ import { initSettings } from "./settings.js";
 // settings form. The practice pages open it when a key is actually missing.
 initSettings({ openWhenEmpty: false });
 
+// Arriving from a practice page's "no key" notice — open the panel and jump to it.
+if (location.hash === "#settings") {
+  const panel = document.getElementById("settings");
+  panel.open = true;
+  panel.scrollIntoView({ block: "center" });
+  // focus after the panel has actually laid out, or it doesn't take
+  requestAnimationFrame(() => document.getElementById("apiKeyInput").focus());
+}
+
 // --- La Liga card
 (async () => {
   const meta = document.getElementById("matchMeta");

@@ -6,6 +6,9 @@ Four pages, all sharing one write → correct → save loop:
 
 - **index.html** (*Inicio*) — home page; pick a mode. Each card shows live
   context: today's match count, the current routine question, your sentence total.
+  This is also the only page with the API-key panel (collapsed by default) — the
+  key is set once, so the practice pages show a notice linking here instead, and
+  only when no key is saved. `index.html#settings` opens the panel directly.
 - **partidos.html** (*La Liga*) — the scoreline, a word bank, and a box where you
   write one sentence about the result. The 3 model sentences are collapsed behind
   a toggle so they can't be copied; the toggle opens itself once you've submitted,

@@ -19,24 +19,8 @@
         Answer about your own day, in the present tense.
       </p>
 
-      <details class="settings" id="settings">
-        <summary>Settings — Anthropic API key</summary>
-        <div class="row">
-          <input
-            type="password"
-            id="apiKeyInput"
-            placeholder="sk-ant-..."
-            autocomplete="off"
-          />
-          <button id="saveKey">Save</button>
-          <button class="secondary" id="clearKey">Clear</button>
-        </div>
-        <div class="key-status" id="keyStatus"></div>
-        <p class="hint">
-          Stored only in this browser's localStorage and sent directly to the
-          Anthropic API when you submit a sentence.
-        </p>
-      </details>
+      <div id="keyNotice"></div>
+
 
       <main id="card"></main>
     </div>

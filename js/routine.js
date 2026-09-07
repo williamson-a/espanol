@@ -10,7 +10,7 @@ import {
   markAnswered,
   resetAnswered,
 } from "./store.js";
-import { initSettings } from "./settings.js";
+import { renderKeyNotice } from "./settings.js";
 import { correctSentence } from "./anthropic.js";
 import { micButton, attachDictation } from "./speech.js";
 
@@ -116,7 +116,7 @@ function questionCard(question, index, previous) {
     const apiKey = getApiKey();
     if (!apiKey) {
       status.className = "status error";
-      status.textContent = "Add your API key in Settings first.";
+      status.textContent = "No API key — add one on the home page.";
       return;
     }
 
@@ -203,7 +203,7 @@ function questionCard(question, index, previous) {
 
 /* ---------- boot ---------- */
 
-initSettings();
+renderKeyNotice();
 
 const answered = getAnswered();
 const entries = getEntries();

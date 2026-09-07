@@ -201,6 +201,19 @@ button.tiny {
 .tag-match { color: var(--accent); }
 .tag-routine { color: var(--good); }
 
+/* shown on practice pages only when no key is saved */
+.key-notice {
+  background: var(--card);
+  border: 1px solid var(--accent);
+  border-left-width: 3px;
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin: 0 0 18px;
+  font-size: 0.88rem;
+  box-shadow: var(--shadow);
+}
+.key-notice a { color: var(--accent); font-weight: 600; white-space: nowrap; }
+
 /* --- settings / api key --- */
 .settings {
   background: var(--card);

@@ -2,7 +2,7 @@
 
 import { DATA_URL } from "./config.js";
 import { getApiKey, addEntry } from "./store.js";
-import { initSettings } from "./settings.js";
+import { renderKeyNotice } from "./settings.js";
 import { correctSentence } from "./anthropic.js";
 import { micButton, attachDictation } from "./speech.js";
 
@@ -72,7 +72,7 @@ function practiceBlock(match, onAnswered) {
     const apiKey = getApiKey();
     if (!apiKey) {
       status.className = "status error";
-      status.textContent = "Add your API key in Settings first.";
+      status.textContent = "No API key — add one on the home page.";
       return;
     }
 
@@ -183,7 +183,7 @@ function matchCard(match) {
 /* ---------- boot ---------- */
 
 async function main() {
-  initSettings();
+  renderKeyNotice();
 
   const container = document.getElementById("matches");
   let data;

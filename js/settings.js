@@ -1,6 +1,23 @@
-// The API-key panel, shared by every page that has one.
+// The API-key panel. It lives on the home page only — it's a set-once thing, so
+// the practice pages get a small notice instead, and only when the key is
+// missing.
 
 import { getApiKey, setApiKey } from "./store.js";
+
+// Renders into #keyNotice, or does nothing when a key is already saved.
+export function renderKeyNotice() {
+  const slot = document.getElementById("keyNotice");
+  if (!slot || getApiKey()) return;
+
+  const link = document.createElement("a");
+  link.href = "index.html#settings";
+  link.textContent = "Add it on the home page →";
+
+  const box = document.createElement("p");
+  box.className = "key-notice";
+  box.append("No Anthropic API key saved, so corrections won't work. ", link);
+  slot.replaceChildren(box);
+}
 
 export function initSettings({ openWhenEmpty = true } = {}) {
   const details = document.getElementById("settings");
