@@ -8,6 +8,7 @@
 // Flags:
 //   --date=YYYY-MM-DD   use this date instead of "yesterday"
 //   --lookback=N        if that date has no matches, walk back up to N days (default 7)
+//   --force             regenerate even if data/today.json already covers these results
 //   --dry-run           print the JSON instead of writing data/today.json
 
 import fs from "node:fs/promises";
@@ -15,7 +16,10 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import Anthropic from "@anthropic-ai/sdk";
 
-const MODEL = "claude-opus-5";
+// Haiku is plenty for writing three A1 sentences, and ~5x cheaper than Opus.
+// Note: Haiku 4.5 rejects `output_config.effort` — only add that if you switch
+// to Sonnet 5 or Opus 5.
+const MODEL = "claude-haiku-4-5";
 const COMPETITION = "PD"; // Primera División (La Liga) on football-data.org
 const LEAGUE_TZ = "Europe/Madrid";
 
@@ -26,9 +30,10 @@ const OUT_FILE = path.join(repoRoot, "data", "today.json");
 /* ---------------------------------------------------------------- args --- */
 
 function parseArgs(argv) {
-  const args = { date: null, lookback: 7, dryRun: false };
+  const args = { date: null, lookback: 7, dryRun: false, force: false };
   for (const arg of argv.slice(2)) {
     if (arg === "--dry-run") args.dryRun = true;
+    else if (arg === "--force") args.force = true;
     else if (arg.startsWith("--date=")) args.date = arg.slice(7);
     else if (arg.startsWith("--lookback=")) args.lookback = Number(arg.slice(11));
     else throw new Error(`Unknown argument: ${arg}`);
@@ -105,6 +110,27 @@ function pickMatchday(matches, targetDate, lookback) {
   return { date: targetDate, matches: [] };
 }
 
+/* ------------------------------------------------------------ freshness --- */
+
+// La Liga plays a handful of days a month, and the lookback above means most
+// daily runs land on a matchday that was already written up yesterday. Compare
+// before spending anything: same date, same fixtures, same scores -> no work.
+async function readExisting() {
+  try {
+    return JSON.parse(await fs.readFile(OUT_FILE, "utf8"));
+  } catch {
+    return null; // missing or unreadable — treat as "needs generating"
+  }
+}
+
+function fingerprint(date, matches) {
+  const fixtures = (matches ?? [])
+    .map((m) => `${m.home}|${m.away}|${m.score?.home}-${m.score?.away}`)
+    .sort()
+    .join(",");
+  return `${date}::${fixtures}`;
+}
+
 /* ------------------------------------------------------------- anthropic --- */
 
 const SYSTEM_PROMPT = `You write Spanish practice material for an ABSOLUTE BEGINNER (CEFR A1) who is learning through football results.
@@ -161,7 +187,6 @@ async function writeLesson(client, match) {
     max_tokens: 2000,
     system: SYSTEM_PROMPT,
     output_config: {
-      effort: "low",
       format: { type: "json_schema", schema: CONTENT_SCHEMA },
     },
     messages: [
@@ -229,6 +254,20 @@ async function main() {
     console.error(`Nothing on ${targetDate}; using the most recent matchday, ${date}.`);
   }
   console.error(`${matches.length} match(es) on ${date}.`);
+
+  // Bail out before spending anything if the file already says exactly this.
+  const existing = await readExisting();
+  if (
+    !args.force &&
+    existing &&
+    fingerprint(date, matches) === fingerprint(existing.date, existing.matches)
+  ) {
+    console.error(
+      `data/today.json already covers ${date} with the same ${matches.length} result(s).` +
+        ` No API calls made. Use --force to regenerate anyway.`
+    );
+    return;
+  }
 
   const client = new Anthropic(); // reads ANTHROPIC_API_KEY
   const out = [];

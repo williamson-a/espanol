@@ -51,7 +51,8 @@ My sentence: "${sentence}"`;
       body: JSON.stringify({
         model: MODEL,
         max_tokens: 1000,
-        output_config: { effort: "low" },
+        // Haiku 4.5 has no `effort` setting and errors if you send one. If you
+        // switch MODEL to Sonnet 5 or Opus 5, add: output_config: { effort: "low" }
         system: SYSTEM_PROMPT,
         messages: [{ role: "user", content: userMessage }],
       }),

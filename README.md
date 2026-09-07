@@ -43,7 +43,14 @@ Useful flags:
 node scripts/generate.mjs --dry-run              # print JSON, don't write the file
 node scripts/generate.mjs --date=2026-09-05      # a specific matchday
 node scripts/generate.mjs --lookback=0           # yesterday only, no fallback
+node scripts/generate.mjs --force                # regenerate even if unchanged
 ```
+
+**Cost guard:** before calling Anthropic, the script compares the matchday it
+found against what `data/today.json` already holds — same date, same fixtures,
+same scores means it exits without spending anything. Since La Liga only plays a
+few days a month and the lookback keeps landing on the same matchday, this is
+what most daily runs do. `--force` overrides it.
 
 Get a free football-data.org token at https://www.football-data.org/client/register
 (the free tier covers La Liga).
@@ -78,16 +85,14 @@ Then open http://localhost:4173/ and paste an Anthropic API key into **Settings*
 The key is stored only in your browser's `localStorage` and sent directly to
 `api.anthropic.com` from the page. Use a key with a low spend limit.
 
-Model is `claude-opus-5` (see `js/config.js` — change to `claude-haiku-4-5` for
-cheaper/faster corrections).
+Model is `claude-haiku-4-5` (see `js/config.js` — switch to `claude-sonnet-5` for
+deeper corrections, but add back the `effort` setting noted in `anthropic.js`).
 
-## Deploying to GitHub Pages
+## Deployment
 
-1. Push this folder to a GitHub repo.
-2. Settings → Pages → Build and deployment → **Deploy from a branch**, branch
-   `main`, folder `/ (root)`.
-3. The site is served at `https://<user>.github.io/<repo>/`. All paths in the code
-   are relative, so it works from a subpath.
+Live at **https://williamson-a.github.io/laliga-spanish/** — GitHub Pages,
+deployed from `main` at `/ (root)`. All paths in the code are relative, so it
+works from the `/laliga-spanish/` subpath.
 
 ## Data format (`data/today.json`)
 
