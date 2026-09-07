@@ -30,6 +30,13 @@ Submitting an answer on either of the first two calls the Anthropic API and retu
 your sentence, a corrected version, and one short note on what changed. The API key
 and every entry live in `localStorage`.
 
+## Look
+
+Warm light palette — paper-grey page (`#efede7`), white cards, terracotta accent.
+Deliberately **not** wired to `prefers-color-scheme`: it stays light even on a Mac
+set to dark mode. All colours live as custom properties at the top of
+`styles.css`; every text/background pair was checked at 4.5:1 or better.
+
 ## Speaking instead of typing
 
 Both practice pages have a **🎤 Hablar** button using the browser's built-in

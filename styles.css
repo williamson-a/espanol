@@ -1,13 +1,18 @@
 :root {
-  --bg: #0f1115;
-  --card: #1a1d24;
-  --card-2: #21252e;
-  --text: #e8eaed;
-  --muted: #9aa0aa;
-  --accent: #ff5a5f;
-  --good: #4caf7d;
-  --line: #2c313b;
+  /* Warm light palette — paper-grey page, white cards. Deliberately not
+     wired to prefers-color-scheme: this stays light even on a Mac set to
+     dark mode, which is the point. */
+  color-scheme: light;
+  --bg: #efede7; /* warm grey page */
+  --card: #ffffff; /* cards sit above the page */
+  --card-2: #f4f2ec; /* inset: inputs, chips, list rows */
+  --text: #2b2a26;
+  --muted: #6d6a63;
+  --accent: #be4b37; /* deep terracotta — readable on light */
+  --good: #3c7a54;
+  --line: #e0ddd4;
   --radius: 14px;
+  --shadow: 0 1px 2px rgba(43, 42, 38, 0.04), 0 1px 6px rgba(43, 42, 38, 0.04);
 }
 
 * { box-sizing: border-box; }
@@ -67,6 +72,7 @@ nav a:hover { text-decoration: underline; }
   align-items: center;
   gap: 14px;
   background: var(--card);
+  box-shadow: var(--shadow);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 18px;
@@ -92,7 +98,7 @@ nav a:hover { text-decoration: underline; }
   white-space: nowrap;
 }
 .choice-arrow { color: var(--muted); font-size: 1.2rem; }
-.choice-quiet { background: transparent; }
+.choice-quiet { background: var(--card-2); box-shadow: none; }
 .choice-quiet .choice-meta { color: var(--muted); }
 
 /* --- grammar hint on the "Mi día" card --- */
@@ -202,6 +208,7 @@ button.tiny {
   border-radius: var(--radius);
   padding: 14px 16px;
   margin-bottom: 22px;
+  box-shadow: var(--shadow);
 }
 .settings summary {
   cursor: pointer;
@@ -273,6 +280,7 @@ button:disabled { opacity: 0.5; cursor: default; }
   border-radius: var(--radius);
   padding: 18px;
   margin-bottom: 20px;
+  box-shadow: var(--shadow);
 }
 .match h2 {
   font-size: 1.05rem;
@@ -398,6 +406,7 @@ button:disabled { opacity: 0.5; cursor: default; }
   border-radius: var(--radius);
   padding: 14px 16px;
   margin-bottom: 14px;
+  box-shadow: var(--shadow);
 }
 .entry .meta {
   display: flex;
