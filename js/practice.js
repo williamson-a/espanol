@@ -45,7 +45,8 @@ function entryCard(entry, onDelete) {
           className: `tag ${isRoutine ? "tag-routine" : "tag-match"}`,
           textContent: isRoutine ? "mi día" : "partido",
         }),
-        el("span", { textContent: label })
+        el("span", { textContent: label }),
+        entry.spoken ? el("span", { className: "spoken-mark", textContent: " 🎤" }) : ""
       ),
       el("span", {}, del)
     ),

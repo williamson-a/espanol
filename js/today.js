@@ -4,6 +4,7 @@ import { DATA_URL } from "./config.js";
 import { getApiKey, addEntry } from "./store.js";
 import { initSettings } from "./settings.js";
 import { correctSentence } from "./anthropic.js";
+import { micButton, attachDictation } from "./speech.js";
 
 const el = (tag, props = {}, ...kids) => {
   const node = Object.assign(document.createElement(tag), props);
@@ -45,6 +46,24 @@ function practiceBlock(match, onAnswered) {
   const status = el("span", { className: "status" });
   const feedback = el("div", { className: "feedback", hidden: true });
 
+  // null when the browser has no speech recognition — then there's just no button
+  const mic = micButton();
+  let spoken = false;
+  if (mic) {
+    attachDictation({
+      button: mic,
+      textarea,
+      status,
+      onSpoken: () => {
+        spoken = true;
+      },
+    });
+    // typing over a transcript means it is no longer purely spoken
+    textarea.addEventListener("keydown", () => {
+      spoken = false;
+    });
+  }
+
   const scoreline = `${match.home} ${match.score.home}–${match.score.away} ${match.away}`;
 
   async function run() {
@@ -67,6 +86,7 @@ function practiceBlock(match, onAnswered) {
         apiKey,
         context: `Match: ${scoreline}`,
         sentence,
+        spoken,
       });
 
       feedback.replaceChildren(
@@ -96,6 +116,7 @@ function practiceBlock(match, onAnswered) {
       addEntry({
         kind: "match",
         contextLabel: scoreline,
+        spoken,
         matchId: match.id,
         matchLabel: scoreline, // kept so entries saved before "Mi día" still render
         matchDate: match.__date,
@@ -121,7 +142,7 @@ function practiceBlock(match, onAnswered) {
     { className: "practice" },
     el("label", { textContent: "Your sentence about this result" }),
     textarea,
-    el("div", { className: "actions" }, submit, status),
+    el("div", { className: "actions" }, submit, ...(mic ? [mic] : []), status),
     feedback
   );
 }

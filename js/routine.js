@@ -4,6 +4,7 @@ import { QUESTIONS, questionIndexForToday } from "./questions.js";
 import { getApiKey, addEntry } from "./store.js";
 import { initSettings } from "./settings.js";
 import { correctSentence } from "./anthropic.js";
+import { micButton, attachDictation } from "./speech.js";
 
 const el = (tag, props = {}, ...kids) => {
   const node = Object.assign(document.createElement(tag), props);
@@ -24,6 +25,22 @@ function render() {
   const submit = el("button", { textContent: "Get feedback" });
   const status = el("span", { className: "status" });
   const feedback = el("div", { className: "feedback", hidden: true });
+
+  const mic = micButton();
+  let spoken = false;
+  if (mic) {
+    attachDictation({
+      button: mic,
+      textarea,
+      status,
+      onSpoken: () => {
+        spoken = true;
+      },
+    });
+    textarea.addEventListener("keydown", () => {
+      spoken = false;
+    });
+  }
 
   const next = el("button", {
     className: "secondary",
@@ -54,6 +71,7 @@ function render() {
         apiKey,
         context: `Question they are answering: ${question.q} ("${question.en}")`,
         sentence,
+        spoken,
       });
 
       feedback.replaceChildren(
@@ -83,6 +101,7 @@ function render() {
         kind: "routine",
         contextLabel: question.q,
         questionEn: question.en,
+        spoken,
         original: result.original,
         corrected: result.corrected,
         note: result.note,
@@ -123,7 +142,7 @@ function render() {
       { className: "practice" },
       el("label", { textContent: "Your answer — conjugate the verb yourself" }),
       textarea,
-      el("div", { className: "actions" }, submit, next, status),
+      el("div", { className: "actions" }, submit, ...(mic ? [mic] : []), next, status),
       feedback
     )
   );

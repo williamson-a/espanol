@@ -23,6 +23,21 @@ Submitting an answer on either of the first two calls the Anthropic API and retu
 your sentence, a corrected version, and one short note on what changed. The API key
 and every entry live in `localStorage`.
 
+## Speaking instead of typing
+
+Both practice pages have a **🎤 Hablar** button using the browser's built-in
+`SpeechRecognition` (`js/speech.js`), set to `es-ES`. No extra API key and no cost —
+recognition happens in the browser, and the audio never reaches Anthropic.
+
+The transcript lands in the text box rather than submitting directly, so a
+mishearing can be fixed before it costs a correction. Spoken answers are flagged to
+the tutor so it ignores capitalisation and punctuation (the transcriber's, not
+yours) and treats an odd word as a possible mishearing. They're marked 🎤 in
+*Mis frases*.
+
+Needs Safari or Chrome — Firefox has no `SpeechRecognition`. Where it's missing the
+button simply isn't rendered. Requires HTTPS, which GitHub Pages provides.
+
 ## Status
 
 Both parts are live and verified end to end.

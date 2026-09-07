@@ -203,6 +203,22 @@ button.secondary {
   border: 1px solid var(--line);
   color: var(--muted);
 }
+
+/* --- microphone --- */
+button.mic { color: var(--text); }
+button.mic.listening {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  animation: pulse 1.4s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.62; }
+}
+@media (prefers-reduced-motion: reduce) {
+  button.mic.listening { animation: none; }
+}
 button:disabled { opacity: 0.5; cursor: default; }
 
 /* --- match card --- */

@@ -42,9 +42,16 @@ function extractJson(text) {
 // `context` is a short line describing what they were responding to, e.g.
 //   'Match: Valencia 0–5 Barça'
 //   'Question: ¿A qué hora te despiertas? ("What time do you wake up?")'
-export async function correctSentence({ apiKey, context, sentence }) {
+export async function correctSentence({ apiKey, context, sentence, spoken = false }) {
   const userMessage = `${context}
-My sentence: "${sentence}"`;
+My sentence: "${sentence}"${
+    spoken
+      ? `\n\n(This was spoken aloud and transcribed, so ignore capitalisation and
+punctuation entirely — they are the transcriber's, not mine. If a word looks
+out of place, it may be a mishearing; correct it to the word I most likely
+meant and say so in the note.)`
+      : ""
+  }`;
 
   let res;
   try {
