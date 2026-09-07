@@ -11,9 +11,12 @@ A tiny static site for learning Spanish from yesterday's La Liga results.
 
 ## Status
 
-- ✅ **Part 2 — frontend**: working. Verified against the sample `data/today.json`.
-- ✅ **Part 1 — data pipeline**: `scripts/generate.mjs` + `.github/workflows/generate.yml`
-  written. **Not yet run against the live APIs** — see "Generating the data" below.
+Both parts are live and verified end to end.
+
+- ✅ **Frontend** — deployed, corrections working against the live Anthropic API.
+- ✅ **Data pipeline** — ran successfully against football-data.org and Anthropic,
+  wrote 4 real matches, and committed them back. The skip guard was confirmed to
+  make zero API calls on a repeat run.
 
 ## The data pipeline
 
