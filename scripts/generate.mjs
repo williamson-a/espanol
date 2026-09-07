@@ -154,10 +154,11 @@ Rules for the word bank:
 const CONTENT_SCHEMA = {
   type: "object",
   properties: {
+    // No minItems/maxItems: the schema validator rejects minItems above 1
+    // ("values other than 0 or 1 are not supported"). The counts are stated in
+    // the system prompt and enforced in writeLesson() instead.
     sentences: {
       type: "array",
-      minItems: 3,
-      maxItems: 3,
       items: {
         type: "object",
         properties: { es: { type: "string" }, en: { type: "string" } },
@@ -167,8 +168,6 @@ const CONTENT_SCHEMA = {
     },
     wordBank: {
       type: "array",
-      minItems: 5,
-      maxItems: 6,
       items: {
         type: "object",
         properties: { es: { type: "string" }, en: { type: "string" } },
