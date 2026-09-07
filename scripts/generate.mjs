@@ -250,6 +250,16 @@ async function main() {
 
   if (matches.length === 0) {
     console.error(`No finished La Liga matches in that window.`);
+    // International break, or the season hasn't started. Blanking the site is
+    // worse than leaving yesterday's lesson up, so keep whatever is already
+    // there and let a later run replace it.
+    const previous = await readExisting();
+    if (previous?.matches?.length) {
+      console.error(
+        `Keeping the existing ${previous.matches.length} match(es) from ${previous.date} rather than publishing an empty page.`
+      );
+      return;
+    }
   } else if (date !== targetDate) {
     console.error(`Nothing on ${targetDate}; using the most recent matchday, ${date}.`);
   }
