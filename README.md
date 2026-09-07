@@ -6,9 +6,10 @@ Four pages, all sharing one write → correct → save loop:
 
 - **index.html** (*Inicio*) — home page; pick a mode. Each card shows live
   context: today's match count, the current routine question, your sentence total.
-- **partidos.html** (*La Liga*) — each match as 3 present-tense Spanish sentences
-  (tap to reveal the English), a word bank, and a box where you write one sentence
-  about the result.
+- **partidos.html** (*La Liga*) — the scoreline, a word bank, and a box where you
+  write one sentence about the result. The 3 model sentences are collapsed behind
+  a toggle so they can't be copied; the toggle opens itself once you've submitted,
+  so they read as a comparison rather than an answer key.
 - **rutina.html** (*Mi día*) — an A1 question about your own daily routine, with a
   word bank and a grammar hint. 24 questions, rotating by date.
 

@@ -35,7 +35,9 @@ function wordChip({ es, en }) {
   );
 }
 
-function practiceBlock(match) {
+// `onAnswered` opens the example sentences once you've submitted your own, so
+// they act as a model to compare against rather than something to copy.
+function practiceBlock(match, onAnswered) {
   const textarea = el("textarea", {
     placeholder: "Escribe una frase sobre este resultado…",
   });
@@ -89,6 +91,7 @@ function practiceBlock(match) {
       );
       feedback.hidden = false;
       status.textContent = "";
+      onAnswered?.();
 
       addEntry({
         kind: "match",
@@ -125,6 +128,17 @@ function practiceBlock(match) {
 
 function matchCard(match) {
   const card = el("section", { className: "match" });
+
+  // Collapsed by default: seeing three finished sentences before you write
+  // turns the exercise into copying. Open it if you're stuck — and it opens
+  // itself once you've submitted, so you can compare.
+  const examples = el(
+    "details",
+    { className: "examples" },
+    el("summary", { textContent: "Ver 3 frases de ejemplo" }),
+    el("ul", { className: "sentences" }, ...match.sentences.map(sentenceItem))
+  );
+
   card.append(
     el(
       "h2",
@@ -136,13 +150,11 @@ function matchCard(match) {
       }),
       ` ${match.away}`
     ),
-    el(
-      "ul",
-      { className: "sentences" },
-      ...match.sentences.map(sentenceItem)
-    ),
     el("div", { className: "wordbank" }, ...match.wordBank.map(wordChip)),
-    practiceBlock(match)
+    practiceBlock(match, () => {
+      examples.open = true;
+    }),
+    examples
   );
   return card;
 }

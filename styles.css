@@ -222,6 +222,26 @@ button:disabled { opacity: 0.5; cursor: default; }
   font-variant-numeric: tabular-nums;
 }
 
+/* example sentences, collapsed until you've written your own */
+.examples {
+  margin-top: 16px;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+.examples summary {
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 0.85rem;
+  list-style: none;
+}
+.examples summary::-webkit-details-marker { display: none; }
+.examples summary::before {
+  content: "▸ ";
+  color: var(--muted);
+}
+.examples[open] summary::before { content: "▾ "; }
+.examples summary:hover { color: var(--text); }
+
 .sentences { list-style: none; padding: 0; margin: 14px 0 0; }
 .sentences li {
   border: 1px solid var(--line);
