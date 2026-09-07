@@ -2,12 +2,19 @@
 
 A tiny static site for learning Spanish from yesterday's La Liga results.
 
-- **index.html** — each match rendered as 3 simple present-tense Spanish sentences
+Three pages, all sharing one write → correct → save loop:
+
+- **index.html** (*Partidos*) — each match as 3 present-tense Spanish sentences
   (tap to reveal the English), a word bank, and a box where you write one sentence
-  about the result. Submitting calls the Anthropic API and shows your sentence, a
-  corrected version, and one short note on what changed. Everything is saved to
-  `localStorage`.
-- **practice.html** — every sentence you've written, with its correction.
+  about the result.
+- **rutina.html** (*Mi día*) — an A1 question about your own daily routine, with a
+  word bank and a sentence starter. 24 questions, rotating by date.
+- **practice.html** (*Mis frases*) — every sentence you've written, with its
+  correction, tagged by which page it came from.
+
+Submitting an answer on either of the first two calls the Anthropic API and returns
+your sentence, a corrected version, and one short note on what changed. The API key
+and every entry live in `localStorage`.
 
 ## Status
 
@@ -80,7 +87,7 @@ The workflow needs **Settings → Actions → General → Workflow permissions**
 The pages use `fetch()` and ES modules, so you need a server (not `file://`):
 
 ```bash
-cd laliga-spanish
+cd espanol
 python3 -m http.server 4173
 ```
 
@@ -93,9 +100,9 @@ deeper corrections, but add back the `effort` setting noted in `anthropic.js`).
 
 ## Deployment
 
-Live at **https://williamson-a.github.io/laliga-spanish/** — GitHub Pages,
+Live at **https://williamson-a.github.io/espanol/** — GitHub Pages,
 deployed from `main` at `/ (root)`. All paths in the code are relative, so it
-works from the `/laliga-spanish/` subpath.
+works from the `/espanol/` subpath.
 
 ## Data format (`data/today.json`)
 
@@ -121,4 +128,7 @@ works from the `/laliga-spanish/` subpath.
 | Key                       | Contents                                             |
 | ------------------------- | --------------------------------------------------- |
 | `laliga_spanish.apiKey`   | Anthropic API key                                   |
-| `laliga_spanish.entries`  | array of `{ id, createdAt, matchId, matchLabel, matchDate, original, corrected, note }` |
+| `laliga_spanish.entries`  | array of `{ id, createdAt, kind, contextLabel, original, corrected, note }` |
+
+`kind` is `"match"` or `"routine"`. Entries saved before the *Mi día* page existed
+have `matchLabel` instead of `contextLabel`; the history page reads either.
