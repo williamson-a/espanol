@@ -141,12 +141,31 @@ nav a:hover { text-decoration: underline; }
   transition: width 0.3s ease;
 }
 
+/* progress bar stays visible while scrolling 24 questions */
+.sticky-progress {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--bg);
+  padding: 12px 0;
+  margin-bottom: 4px;
+}
+button.tiny {
+  padding: 3px 10px;
+  font-size: 0.72rem;
+  border-radius: 999px;
+}
+
 /* --- "Mi día" question card --- */
 .question-card .question-es {
   font-size: 1.25rem;
   margin: 0 0 2px;
   letter-spacing: -0.01em;
 }
+/* the tick only shows once the question has been answered */
+.question-card .check { display: none; color: var(--good); }
+.question-card.answered .check { display: inline; }
+.question-card.answered { border-color: color-mix(in srgb, var(--good) 35%, var(--line)); }
 .question-card .question-en {
   margin: 0 0 4px;
   color: var(--muted);

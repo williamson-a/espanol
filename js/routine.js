@@ -1,8 +1,15 @@
-// "Mi día" page: work through the whole set of daily-routine questions, one at
-// a time. Answering one unlocks the next; progress is remembered across visits.
+// "Mi día" page: every daily-routine question on one page, like the match list.
+// Answer them in any order; progress and past answers persist across visits.
 
-import { QUESTIONS, questionIndexForToday } from "./questions.js";
-import { getApiKey, addEntry, getAnswered, markAnswered, resetAnswered } from "./store.js";
+import { QUESTIONS } from "./questions.js";
+import {
+  getApiKey,
+  addEntry,
+  getEntries,
+  getAnswered,
+  markAnswered,
+  resetAnswered,
+} from "./store.js";
 import { initSettings } from "./settings.js";
 import { correctSentence } from "./anthropic.js";
 import { micButton, attachDictation } from "./speech.js";
@@ -13,54 +20,46 @@ const el = (tag, props = {}, ...kids) => {
   return node;
 };
 
-const container = () => document.getElementById("card");
-
-// First unanswered question at or after `from`, wrapping. null once all are done.
-function nextUnanswered(answered, from) {
-  for (let k = 0; k < QUESTIONS.length; k++) {
-    const i = (from + k) % QUESTIONS.length;
-    if (!answered.has(i)) return i;
+// Most recent answer to a given question, so reopening the page shows the work
+// you've already done rather than 24 blank boxes.
+function lastAnswerFor(questionText, entries) {
+  for (let i = entries.length - 1; i >= 0; i--) {
+    const e = entries[i];
+    if (e.kind === "routine" && e.contextLabel === questionText) return e;
   }
   return null;
 }
 
-/* ---------- completed state ---------- */
+/* ---------- progress header ---------- */
 
-function renderDone() {
-  const again = el("button", { textContent: "Empezar de nuevo" });
-  again.addEventListener("click", () => {
-    resetAnswered();
-    index = questionIndexForToday();
-    render();
-  });
+const progressText = el("span");
+const progressFill = el("span", { className: "progress-fill" });
+const resetBtn = el("button", {
+  className: "secondary tiny",
+  textContent: "Reiniciar",
+  hidden: true,
+});
 
-  container().replaceChildren(
-    el(
-      "section",
-      { className: "match question-card" },
-      el("h2", { className: "question-es", textContent: "¡Completado! 🎉" }),
-      el("p", {
-        className: "question-en",
-        textContent: `You've answered all ${QUESTIONS.length} questions. Your sentences are saved in Mis frases.`,
-      }),
-      el("div", { className: "practice" }, el("div", { className: "actions" }, again))
-    )
-  );
+resetBtn.addEventListener("click", () => {
+  if (!confirm("Clear your progress marks? Your saved sentences are not deleted.")) return;
+  resetAnswered();
+  document.querySelectorAll(".question-card").forEach((c) => c.classList.remove("answered"));
+  updateProgress();
+});
+
+function updateProgress() {
+  const done = getAnswered().size;
+  const total = QUESTIONS.length;
+  progressText.textContent =
+    done === total ? `¡Completado! all ${total} answered 🎉` : `${done} of ${total} answered`;
+  progressFill.style.width = `${(done / total) * 100}%`;
+  resetBtn.hidden = done === 0;
 }
 
-/* ---------- one question ---------- */
+/* ---------- one question card ---------- */
 
-let index = null;
-
-function render() {
-  const answered = getAnswered();
-  if (index === null || answered.has(index)) {
-    index = nextUnanswered(answered, index ?? questionIndexForToday());
-  }
-  if (index === null) return renderDone();
-
-  const question = QUESTIONS[index];
-  const done = answered.size;
+function questionCard(question, index, previous) {
+  const card = el("section", { className: "match question-card" });
 
   const textarea = el("textarea", { placeholder: "Escribe tu respuesta…" });
   const submit = el("button", { textContent: "Get feedback" });
@@ -83,19 +82,33 @@ function render() {
     });
   }
 
-  // Skip without answering — stays in the pool for later.
-  const skip = el("button", { className: "secondary", textContent: "Saltar ↻" });
-  skip.addEventListener("click", () => {
-    index = nextUnanswered(getAnswered(), (index + 1) % QUESTIONS.length);
-    render();
-  });
+  const showFeedback = ({ original, corrected, note }) => {
+    feedback.replaceChildren(
+      el(
+        "p",
+        { className: "line" },
+        el("span", { className: "label", textContent: "You said" }),
+        el("span", { textContent: original })
+      ),
+      el(
+        "p",
+        { className: "line" },
+        el("span", { className: "label", textContent: "Corrected" }),
+        el("span", { className: "corrected", textContent: corrected })
+      ),
+      el(
+        "p",
+        { className: "line" },
+        el("span", { className: "label", textContent: "Note" }),
+        el("span", { className: "note", textContent: note })
+      )
+    );
+    feedback.hidden = false;
+  };
 
-  // Appears only once you've answered, so the correction is read before moving on.
-  const next = el("button", { textContent: "Siguiente pregunta →", hidden: true });
-  next.addEventListener("click", () => {
-    index = nextUnanswered(getAnswered(), (index + 1) % QUESTIONS.length);
-    render();
-  });
+  // The tick is driven by the progress mark (set below), not by this — an entry
+  // deleted from "Mis frases" shouldn't un-tick a question you did answer.
+  if (previous) showFeedback(previous);
 
   async function run() {
     const sentence = textarea.value.trim();
@@ -110,7 +123,6 @@ function render() {
     submit.disabled = true;
     status.className = "status";
     status.textContent = "Checking…";
-    feedback.hidden = true;
 
     try {
       const result = await correctSentence({
@@ -120,28 +132,9 @@ function render() {
         spoken,
       });
 
-      feedback.replaceChildren(
-        el(
-          "p",
-          { className: "line" },
-          el("span", { className: "label", textContent: "You said" }),
-          el("span", { textContent: result.original })
-        ),
-        el(
-          "p",
-          { className: "line" },
-          el("span", { className: "label", textContent: "Corrected" }),
-          el("span", { className: "corrected", textContent: result.corrected })
-        ),
-        el(
-          "p",
-          { className: "line" },
-          el("span", { className: "label", textContent: "Note" }),
-          el("span", { className: "note", textContent: result.note })
-        )
-      );
-      feedback.hidden = false;
+      showFeedback(result);
       status.textContent = "";
+      textarea.value = "";
 
       addEntry({
         kind: "routine",
@@ -154,14 +147,12 @@ function render() {
       });
 
       markAnswered(index);
-      submit.hidden = true;
-      if (mic) mic.hidden = true;
-      skip.hidden = true;
-      next.hidden = false;
-      next.focus();
+      card.classList.add("answered");
+      updateProgress();
     } catch (err) {
       status.className = "status error";
       status.textContent = err.message;
+    } finally {
       submit.disabled = false;
     }
   }
@@ -171,22 +162,13 @@ function render() {
     if ((e.metaKey || e.ctrlKey) && e.key === "Enter") run();
   });
 
-  const card = el("section", { className: "match question-card" });
   card.append(
     el(
-      "div",
-      { className: "progress" },
-      el("span", { textContent: `${done} of ${QUESTIONS.length} answered` }),
-      el(
-        "span",
-        { className: "progress-bar" },
-        el("span", {
-          className: "progress-fill",
-          style: `width:${(done / QUESTIONS.length) * 100}%`,
-        })
-      )
+      "h2",
+      { className: "question-es" },
+      el("span", { className: "check", textContent: "✓ " }),
+      question.q
     ),
-    el("h2", { className: "question-es", textContent: question.q }),
     el("p", { className: "question-en", textContent: question.en }),
     el(
       "div",
@@ -211,22 +193,35 @@ function render() {
       { className: "practice" },
       el("label", { textContent: "Your answer — conjugate the verb yourself" }),
       textarea,
-      el(
-        "div",
-        { className: "actions" },
-        submit,
-        ...(mic ? [mic] : []),
-        skip,
-        next,
-        status
-      ),
+      el("div", { className: "actions" }, submit, ...(mic ? [mic] : []), status),
       feedback
     )
   );
 
-  container().replaceChildren(card);
-  textarea.focus();
+  return card;
 }
 
+/* ---------- boot ---------- */
+
 initSettings();
-render();
+
+const answered = getAnswered();
+const entries = getEntries();
+const container = document.getElementById("card");
+
+container.replaceChildren(
+  el(
+    "div",
+    { className: "progress sticky-progress" },
+    progressText,
+    el("span", { className: "progress-bar" }, progressFill),
+    resetBtn
+  ),
+  ...QUESTIONS.map((q, i) => {
+    const card = questionCard(q, i, lastAnswerFor(q.q, entries));
+    if (answered.has(i)) card.classList.add("answered");
+    return card;
+  })
+);
+
+updateProgress();

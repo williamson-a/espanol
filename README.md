@@ -10,16 +10,19 @@ Four pages, all sharing one write → correct → save loop:
   write one sentence about the result. The 3 model sentences are collapsed behind
   a toggle so they can't be copied; the toggle opens itself once you've submitted,
   so they read as a comparison rather than an answer key.
-- **rutina.html** (*Mi día*) — works through all 24 A1 questions about your own
-  daily routine, one at a time, each with a word bank and a grammar hint.
-  Answering one reveals **Siguiente pregunta →**; **Saltar ↻** moves on without
-  answering and leaves the question in the pool. Progress is kept in
-  `localStorage`, so the set resumes across visits and finishes with a completed
-  screen and a reset.
+- **rutina.html** (*Mi día*) — all 24 A1 questions about your own daily routine
+  on one page, like the match list. Each has a word bank, a grammar hint, an
+  answer box and a mic. Answer them in any order.
 
   Word banks list **infinitives only** — never a conjugated form. Conjugating is
   the exercise, so `despertarse` appears but `me despierto` never does; the hint
   states the rule ("reflexive, and stem-changing e → ie") without applying it.
+
+  A sticky bar tracks how many you've answered. Answered questions get a tick and
+  redisplay your last correction when you come back, so the page doubles as a
+  record. Progress lives in `localStorage` and can be reset without deleting any
+  saved sentences.
+
 - **practice.html** (*Mis frases*) — every sentence you've written, with its
   correction, tagged by which page it came from.
 
