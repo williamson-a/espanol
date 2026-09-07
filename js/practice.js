@@ -28,13 +28,25 @@ function entryCard(entry, onDelete) {
     onDelete();
   });
 
+  // Entries saved before the "Mi día" page existed only have matchLabel.
+  const label = entry.contextLabel || entry.matchLabel || "—";
+  const isRoutine = entry.kind === "routine";
+
   return el(
     "article",
     { className: "entry" },
     el(
       "div",
       { className: "meta" },
-      el("span", { textContent: entry.matchLabel || "—" }),
+      el(
+        "span",
+        {},
+        el("span", {
+          className: `tag ${isRoutine ? "tag-routine" : "tag-match"}`,
+          textContent: isRoutine ? "mi día" : "partido",
+        }),
+        el("span", { textContent: label })
+      ),
       el("span", {}, del)
     ),
     el("p", { className: "original", textContent: `“${entry.original}”` }),

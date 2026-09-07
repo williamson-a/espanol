@@ -48,13 +48,50 @@ header.site h1 .ball { color: var(--accent); }
   margin: 0 0 20px;
 }
 
+nav { display: flex; gap: 14px; }
 nav a {
   color: var(--accent);
   text-decoration: none;
   font-size: 0.92rem;
   font-weight: 600;
+  white-space: nowrap;
 }
 nav a:hover { text-decoration: underline; }
+
+/* --- "Mi día" question card --- */
+.question-card .question-es {
+  font-size: 1.25rem;
+  margin: 0 0 2px;
+  letter-spacing: -0.01em;
+}
+.question-card .question-en {
+  margin: 0 0 4px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.practice label code {
+  background: var(--card-2);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 1px 6px;
+  color: var(--text);
+  font-size: 0.85em;
+}
+
+/* --- entry kind tags on the history page --- */
+.tag {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 1px 8px;
+  margin-right: 8px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border: 1px solid var(--line);
+}
+.tag-match { color: var(--accent); }
+.tag-routine { color: var(--good); }
 
 /* --- settings / api key --- */
 .settings {

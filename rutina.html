@@ -3,19 +3,21 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>La Liga en español</title>
+    <title>Mi día — La Liga en español</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="wrap">
       <header class="site">
-        <h1><span class="ball">⚽</span> La Liga en español</h1>
+        <h1><span class="ball">☀️</span> Mi día</h1>
         <nav>
-          <a href="rutina.html">Mi día</a>
+          <a href="index.html">Partidos</a>
           <a href="practice.html">Mis frases →</a>
         </nav>
       </header>
-      <p class="subtitle" id="subtitle">Yesterday's results, in beginner Spanish.</p>
+      <p class="subtitle">
+        Answer about your own day, in the present tense.
+      </p>
 
       <details class="settings" id="settings">
         <summary>Settings — Anthropic API key</summary>
@@ -32,14 +34,13 @@
         <div class="key-status" id="keyStatus"></div>
         <p class="hint">
           Stored only in this browser's localStorage and sent directly to the
-          Anthropic API when you submit a sentence. Use a key scoped to a small
-          spend limit.
+          Anthropic API when you submit a sentence.
         </p>
       </details>
 
-      <main id="matches"></main>
+      <main id="card"></main>
     </div>
 
-    <script type="module" src="js/today.js"></script>
+    <script type="module" src="js/routine.js"></script>
   </body>
 </html>
