@@ -1,0 +1,17 @@
+{
+  "name": "laliga-spanish",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Learn Spanish from yesterday's La Liga results",
+  "scripts": {
+    "generate": "node scripts/generate.mjs",
+    "serve": "python3 -m http.server 4173"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.124.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

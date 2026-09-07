@@ -1,0 +1,51 @@
+name: Generate today's Spanish
+
+on:
+  schedule:
+    # 06:00 UTC daily = 07:00 in Madrid (winter) / 08:00 (summer).
+    # La Liga matches finish by ~23:00 local, so yesterday's results are final.
+    # Change this line if you want it to land at 7am in a different timezone —
+    # GitHub cron is always UTC.
+    - cron: "0 6 * * *"
+  workflow_dispatch: # lets you run it by hand from the Actions tab
+
+# Needed so the job can commit the regenerated data/today.json back to the repo.
+permissions:
+  contents: write
+
+# If a run is still going when the next one fires, let the new one wait.
+concurrency:
+  group: generate
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      # No lockfile is committed, so `npm install` rather than `npm ci`.
+      - name: Install dependencies
+        run: npm install --omit=dev
+
+      - name: Generate data/today.json
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN }}
+        run: node scripts/generate.mjs
+
+      - name: Commit if anything changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/today.json
+          if git diff --staged --quiet; then
+            echo "No change to data/today.json — nothing to commit."
+          else
+            git commit -m "data: La Liga results for $(date -u +%F)"
+            git push
+          fi
