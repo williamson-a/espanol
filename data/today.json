@@ -1,122 +1,26 @@
 {
-  "date": "2026-09-06",
+  "date": "2026-09-07",
   "competition": "La Liga",
-  "generatedAt": "2026-09-07T01:24:42.484Z",
+  "generatedAt": "2026-09-08T10:54:12.202Z",
   "source": "football-data.org + Anthropic API",
   "matches": [
     {
-      "id": "2026-09-06-valencia-barca",
-      "home": "Valencia",
-      "away": "Barça",
+      "id": "2026-09-07-getafe-celta",
+      "home": "Getafe",
+      "away": "Celta",
       "score": {
-        "home": 0,
-        "away": 5
+        "home": 1,
+        "away": 1
       },
       "matchday": 4,
       "sentences": [
         {
-          "es": "Valencia juega contra Barça en casa.",
-          "en": "Valencia plays against Barça at home."
+          "es": "Getafe juega en casa contra Celta.",
+          "en": "Getafe plays at home against Celta."
         },
         {
-          "es": "Barça marca cinco goles en el partido.",
-          "en": "Barça scores five goals in the match."
-        },
-        {
-          "es": "Barça gana y Valencia pierde hoy.",
-          "en": "Barça wins and Valencia loses today."
-        }
-      ],
-      "wordBank": [
-        {
-          "es": "el partido",
-          "en": "the match"
-        },
-        {
-          "es": "el gol",
-          "en": "the goal"
-        },
-        {
-          "es": "marcar",
-          "en": "to score"
-        },
-        {
-          "es": "ganar",
-          "en": "to win"
-        },
-        {
-          "es": "perder",
-          "en": "to lose"
-        },
-        {
-          "es": "jugar",
-          "en": "to play"
-        }
-      ]
-    },
-    {
-      "id": "2026-09-06-alaves-osasuna",
-      "home": "Alavés",
-      "away": "Osasuna",
-      "score": {
-        "home": 5,
-        "away": 2
-      },
-      "matchday": 4,
-      "sentences": [
-        {
-          "es": "Alavés juega contra Osasuna en casa.",
-          "en": "Alavés plays against Osasuna at home."
-        },
-        {
-          "es": "Alavés marca cinco goles y Osasuna marca dos.",
-          "en": "Alavés scores five goals and Osasuna scores two."
-        },
-        {
-          "es": "Alavés gana el partido.",
-          "en": "Alavés wins the match."
-        }
-      ],
-      "wordBank": [
-        {
-          "es": "el gol",
-          "en": "the goal"
-        },
-        {
-          "es": "marcar",
-          "en": "to score"
-        },
-        {
-          "es": "jugar",
-          "en": "to play"
-        },
-        {
-          "es": "ganar",
-          "en": "to win"
-        },
-        {
-          "es": "el partido",
-          "en": "the match"
-        }
-      ]
-    },
-    {
-      "id": "2026-09-06-malaga-levante",
-      "home": "Málaga",
-      "away": "Levante",
-      "score": {
-        "home": 0,
-        "away": 0
-      },
-      "matchday": 4,
-      "sentences": [
-        {
-          "es": "Málaga juega contra Levante hoy.",
-          "en": "Málaga plays against Levante today."
-        },
-        {
-          "es": "Los dos equipos no marcan goles.",
-          "en": "The two teams do not score goals."
+          "es": "Getafe marca un gol. Celta marca un gol.",
+          "en": "Getafe scores a goal. Celta scores a goal."
         },
         {
           "es": "El partido termina en empate.",
@@ -125,16 +29,16 @@
       ],
       "wordBank": [
         {
-          "es": "jugar",
-          "en": "to play"
-        },
-        {
           "es": "el gol",
           "en": "the goal"
         },
         {
           "es": "marcar",
           "en": "to score"
+        },
+        {
+          "es": "jugar",
+          "en": "to play"
         },
         {
           "es": "el partido",
@@ -151,29 +55,33 @@
       ]
     },
     {
-      "id": "2026-09-06-espanyol-sevilla-fc",
-      "home": "Espanyol",
-      "away": "Sevilla FC",
+      "id": "2026-09-07-elche-real-sociedad",
+      "home": "Elche",
+      "away": "Real Sociedad",
       "score": {
-        "home": 1,
-        "away": 1
+        "home": 2,
+        "away": 3
       },
       "matchday": 4,
       "sentences": [
         {
-          "es": "Espanyol juega contra Sevilla FC.",
-          "en": "Espanyol plays against Sevilla FC."
+          "es": "Elche juega contra Real Sociedad hoy.",
+          "en": "Elche plays against Real Sociedad today."
         },
         {
-          "es": "Espanyol marca un gol y Sevilla marca un gol.",
-          "en": "Espanyol scores one goal and Sevilla scores one goal."
+          "es": "Elche marca dos goles. Real Sociedad marca tres goles.",
+          "en": "Elche scores two goals. Real Sociedad scores three goals."
         },
         {
-          "es": "El partido es un empate.",
-          "en": "The match is a draw."
+          "es": "Real Sociedad gana el partido.",
+          "en": "Real Sociedad wins the match."
         }
       ],
       "wordBank": [
+        {
+          "es": "el partido",
+          "en": "the match"
+        },
         {
           "es": "jugar",
           "en": "to play"
@@ -187,12 +95,8 @@
           "en": "the goal"
         },
         {
-          "es": "el partido",
-          "en": "the match"
-        },
-        {
-          "es": "el empate",
-          "en": "the draw"
+          "es": "ganar",
+          "en": "to win"
         },
         {
           "es": "contra",
