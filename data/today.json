@@ -1,90 +1,36 @@
 {
-  "date": "2026-09-07",
+  "date": "2026-09-11",
   "competition": "La Liga",
-  "generatedAt": "2026-09-08T10:54:12.202Z",
+  "generatedAt": "2026-09-12T10:21:16.968Z",
   "source": "football-data.org + Anthropic API",
   "matches": [
     {
-      "id": "2026-09-07-getafe-celta",
-      "home": "Getafe",
-      "away": "Celta",
+      "id": "2026-09-11-sevilla-fc-valencia",
+      "home": "Sevilla FC",
+      "away": "Valencia",
       "score": {
         "home": 1,
-        "away": 1
+        "away": 0
       },
-      "matchday": 4,
+      "matchday": 5,
       "sentences": [
         {
-          "es": "Getafe juega en casa contra Celta.",
-          "en": "Getafe plays at home against Celta."
+          "es": "Sevilla y Valencia juegan hoy.",
+          "en": "Sevilla and Valencia play today."
         },
         {
-          "es": "Getafe marca un gol. Celta marca un gol.",
-          "en": "Getafe scores a goal. Celta scores a goal."
+          "es": "Sevilla marca un gol.",
+          "en": "Sevilla scores one goal."
         },
         {
-          "es": "El partido termina en empate.",
-          "en": "The match ends in a draw."
-        }
-      ],
-      "wordBank": [
-        {
-          "es": "el gol",
-          "en": "the goal"
-        },
-        {
-          "es": "marcar",
-          "en": "to score"
-        },
-        {
-          "es": "jugar",
-          "en": "to play"
-        },
-        {
-          "es": "el partido",
-          "en": "the match"
-        },
-        {
-          "es": "el empate",
-          "en": "the draw"
-        },
-        {
-          "es": "terminar",
-          "en": "to end"
-        }
-      ]
-    },
-    {
-      "id": "2026-09-07-elche-real-sociedad",
-      "home": "Elche",
-      "away": "Real Sociedad",
-      "score": {
-        "home": 2,
-        "away": 3
-      },
-      "matchday": 4,
-      "sentences": [
-        {
-          "es": "Elche juega contra Real Sociedad hoy.",
-          "en": "Elche plays against Real Sociedad today."
-        },
-        {
-          "es": "Elche marca dos goles. Real Sociedad marca tres goles.",
-          "en": "Elche scores two goals. Real Sociedad scores three goals."
-        },
-        {
-          "es": "Real Sociedad gana el partido.",
-          "en": "Real Sociedad wins the match."
+          "es": "Sevilla gana el partido.",
+          "en": "Sevilla wins the match."
         }
       ],
       "wordBank": [
         {
           "es": "el partido",
           "en": "the match"
-        },
-        {
-          "es": "jugar",
-          "en": "to play"
         },
         {
           "es": "marcar",
@@ -99,8 +45,8 @@
           "en": "to win"
         },
         {
-          "es": "contra",
-          "en": "against"
+          "es": "jugar",
+          "en": "to play"
         }
       ]
     }
