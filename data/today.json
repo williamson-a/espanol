@@ -1,80 +1,30 @@
 {
-  "date": "2026-09-16",
+  "date": "2026-09-17",
   "competition": "La Liga",
-  "generatedAt": "2026-09-17T11:17:05.370Z",
+  "generatedAt": "2026-09-18T10:50:09.599Z",
   "source": "football-data.org + Anthropic API",
   "matches": [
     {
-      "id": "2026-09-16-deportivo-sevilla-fc",
-      "home": "Deportivo",
-      "away": "Sevilla FC",
+      "id": "2026-09-17-real-betis-getafe",
+      "home": "Real Betis",
+      "away": "Getafe",
       "score": {
-        "home": 0,
-        "away": 1
-      },
-      "matchday": 6,
-      "sentences": [
-        {
-          "es": "Deportivo juega en casa contra Sevilla.",
-          "en": "Deportivo plays at home against Sevilla."
-        },
-        {
-          "es": "Sevilla marca un gol.",
-          "en": "Sevilla scores one goal."
-        },
-        {
-          "es": "Sevilla gana el partido.",
-          "en": "Sevilla wins the match."
-        }
-      ],
-      "wordBank": [
-        {
-          "es": "el partido",
-          "en": "the match"
-        },
-        {
-          "es": "el gol",
-          "en": "the goal"
-        },
-        {
-          "es": "jugar",
-          "en": "to play"
-        },
-        {
-          "es": "marcar",
-          "en": "to score"
-        },
-        {
-          "es": "ganar",
-          "en": "to win"
-        },
-        {
-          "es": "en casa",
-          "en": "at home"
-        }
-      ]
-    },
-    {
-      "id": "2026-09-16-atleti-osasuna",
-      "home": "Atleti",
-      "away": "Osasuna",
-      "score": {
-        "home": 4,
+        "home": 1,
         "away": 0
       },
       "matchday": 6,
       "sentences": [
         {
-          "es": "Atleti juega contra Osasuna en casa.",
-          "en": "Atleti plays against Osasuna at home."
+          "es": "Real Betis juega contra Getafe hoy.",
+          "en": "Real Betis plays against Getafe today."
         },
         {
-          "es": "Atleti marca cuatro goles. Osasuna marca cero goles.",
-          "en": "Atleti scores four goals. Osasuna scores zero goals."
+          "es": "Real Betis marca un gol.",
+          "en": "Real Betis scores one goal."
         },
         {
-          "es": "Atleti gana el partido.",
-          "en": "Atleti wins the match."
+          "es": "Real Betis gana el partido.",
+          "en": "Real Betis wins the match."
         }
       ],
       "wordBank": [
@@ -83,20 +33,20 @@
           "en": "the match"
         },
         {
-          "es": "el gol",
-          "en": "the goal"
+          "es": "jugar",
+          "en": "to play"
         },
         {
           "es": "marcar",
           "en": "to score"
         },
         {
-          "es": "ganar",
-          "en": "to win"
+          "es": "el gol",
+          "en": "the goal"
         },
         {
-          "es": "jugar",
-          "en": "to play"
+          "es": "ganar",
+          "en": "to win"
         },
         {
           "es": "contra",
@@ -105,33 +55,29 @@
       ]
     },
     {
-      "id": "2026-09-16-barca-santander",
-      "home": "Barça",
-      "away": "Santander",
+      "id": "2026-09-17-malaga-villarreal",
+      "home": "Málaga",
+      "away": "Villarreal",
       "score": {
-        "home": 7,
-        "away": 2
+        "home": 1,
+        "away": 3
       },
       "matchday": 6,
       "sentences": [
         {
-          "es": "Barcelona juega contra Santander.",
-          "en": "Barcelona plays against Santander."
+          "es": "Málaga juega contra Villarreal en casa.",
+          "en": "Málaga plays against Villarreal at home."
         },
         {
-          "es": "Barcelona marca siete goles.",
-          "en": "Barcelona scores seven goals."
+          "es": "Villarreal marca tres goles. Málaga marca un gol.",
+          "en": "Villarreal scores three goals. Málaga scores one goal."
         },
         {
-          "es": "Barcelona gana el partido.",
-          "en": "Barcelona wins the match."
+          "es": "Villarreal gana el partido.",
+          "en": "Villarreal wins the match."
         }
       ],
       "wordBank": [
-        {
-          "es": "el partido",
-          "en": "the match"
-        },
         {
           "es": "el gol",
           "en": "the goal"
@@ -143,6 +89,10 @@
         {
           "es": "ganar",
           "en": "to win"
+        },
+        {
+          "es": "el partido",
+          "en": "the match"
         },
         {
           "es": "jugar",
