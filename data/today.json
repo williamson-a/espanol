@@ -1,98 +1,48 @@
 {
-  "date": "2026-09-17",
+  "date": "2026-09-18",
   "competition": "La Liga",
-  "generatedAt": "2026-09-18T10:50:09.599Z",
+  "generatedAt": "2026-09-19T10:33:42.795Z",
   "source": "football-data.org + Anthropic API",
   "matches": [
     {
-      "id": "2026-09-17-real-betis-getafe",
-      "home": "Real Betis",
-      "away": "Getafe",
-      "score": {
-        "home": 1,
-        "away": 0
-      },
-      "matchday": 6,
-      "sentences": [
-        {
-          "es": "Real Betis juega contra Getafe hoy.",
-          "en": "Real Betis plays against Getafe today."
-        },
-        {
-          "es": "Real Betis marca un gol.",
-          "en": "Real Betis scores one goal."
-        },
-        {
-          "es": "Real Betis gana el partido.",
-          "en": "Real Betis wins the match."
-        }
-      ],
-      "wordBank": [
-        {
-          "es": "el partido",
-          "en": "the match"
-        },
-        {
-          "es": "jugar",
-          "en": "to play"
-        },
-        {
-          "es": "marcar",
-          "en": "to score"
-        },
-        {
-          "es": "el gol",
-          "en": "the goal"
-        },
-        {
-          "es": "ganar",
-          "en": "to win"
-        },
-        {
-          "es": "contra",
-          "en": "against"
-        }
-      ]
-    },
-    {
-      "id": "2026-09-17-malaga-villarreal",
-      "home": "Málaga",
-      "away": "Villarreal",
+      "id": "2026-09-18-espanyol-elche",
+      "home": "Espanyol",
+      "away": "Elche",
       "score": {
         "home": 1,
         "away": 3
       },
-      "matchday": 6,
+      "matchday": 7,
       "sentences": [
         {
-          "es": "Málaga juega contra Villarreal en casa.",
-          "en": "Málaga plays against Villarreal at home."
+          "es": "Espanyol juega en casa contra Elche.",
+          "en": "Espanyol plays at home against Elche."
         },
         {
-          "es": "Villarreal marca tres goles. Málaga marca un gol.",
-          "en": "Villarreal scores three goals. Málaga scores one goal."
+          "es": "Elche marca tres goles y Espanyol marca uno.",
+          "en": "Elche scores three goals and Espanyol scores one."
         },
         {
-          "es": "Villarreal gana el partido.",
-          "en": "Villarreal wins the match."
+          "es": "Elche gana el partido.",
+          "en": "Elche wins the match."
         }
       ],
       "wordBank": [
         {
-          "es": "el gol",
-          "en": "the goal"
+          "es": "el partido",
+          "en": "the match"
         },
         {
           "es": "marcar",
           "en": "to score"
         },
         {
-          "es": "ganar",
-          "en": "to win"
+          "es": "el gol",
+          "en": "the goal"
         },
         {
-          "es": "el partido",
-          "en": "the match"
+          "es": "ganar",
+          "en": "to win"
         },
         {
           "es": "jugar",
