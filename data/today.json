@@ -1,37 +1,83 @@
 {
-  "date": "2026-10-09",
+  "date": "2026-10-10",
   "competition": "La Liga",
-  "generatedAt": "2026-10-10T12:09:07.001Z",
+  "generatedAt": "2026-10-11T12:23:00.979Z",
   "source": "football-data.org + Anthropic API",
   "matches": [
     {
-      "id": "2026-10-09-malaga-espanyol",
-      "home": "Málaga",
-      "away": "Espanyol",
+      "id": "2026-10-10-alaves-atleti",
+      "home": "Alavés",
+      "away": "Atleti",
       "score": {
         "home": 1,
-        "away": 1
+        "away": 2
       },
       "matchday": 8,
       "sentences": [
         {
-          "es": "Málaga juega contra Espanyol en casa.",
-          "en": "Málaga plays against Espanyol at home."
+          "es": "Alavés juega en casa contra Atleti.",
+          "en": "Alavés plays at home against Atleti."
         },
         {
-          "es": "Málaga marca un gol y Espanyol marca un gol.",
-          "en": "Málaga scores one goal and Espanyol scores one goal."
+          "es": "Alavés marca un gol y Atleti marca dos goles.",
+          "en": "Alavés scores one goal and Atleti scores two goals."
         },
         {
-          "es": "El partido es empate entre los dos equipos.",
-          "en": "The match is a draw between the two teams."
+          "es": "Atleti gana el partido.",
+          "en": "Atleti wins the match."
         }
       ],
       "wordBank": [
         {
+          "es": "el partido",
+          "en": "the match"
+        },
+        {
           "es": "jugar",
           "en": "to play"
         },
+        {
+          "es": "marcar",
+          "en": "to score"
+        },
+        {
+          "es": "el gol",
+          "en": "the goal"
+        },
+        {
+          "es": "ganar",
+          "en": "to win"
+        },
+        {
+          "es": "en casa",
+          "en": "at home"
+        }
+      ]
+    },
+    {
+      "id": "2026-10-10-barca-getafe",
+      "home": "Barça",
+      "away": "Getafe",
+      "score": {
+        "home": 3,
+        "away": 0
+      },
+      "matchday": 8,
+      "sentences": [
+        {
+          "es": "Barcelona juega contra Getafe en casa.",
+          "en": "Barcelona plays against Getafe at home."
+        },
+        {
+          "es": "Barcelona marca tres goles.",
+          "en": "Barcelona scores three goals."
+        },
+        {
+          "es": "Barcelona gana el partido.",
+          "en": "Barcelona wins the match."
+        }
+      ],
+      "wordBank": [
         {
           "es": "el gol",
           "en": "the goal"
@@ -41,12 +87,70 @@
           "en": "to score"
         },
         {
+          "es": "ganar",
+          "en": "to win"
+        },
+        {
           "es": "el partido",
           "en": "the match"
         },
         {
-          "es": "el empate",
-          "en": "the draw"
+          "es": "jugar",
+          "en": "to play"
+        },
+        {
+          "es": "contra",
+          "en": "against"
+        }
+      ]
+    },
+    {
+      "id": "2026-10-10-real-madrid-villarreal",
+      "home": "Real Madrid",
+      "away": "Villarreal",
+      "score": {
+        "home": 1,
+        "away": 0
+      },
+      "matchday": 8,
+      "sentences": [
+        {
+          "es": "Real Madrid juega contra Villarreal.",
+          "en": "Real Madrid plays against Villarreal."
+        },
+        {
+          "es": "Real Madrid marca un gol.",
+          "en": "Real Madrid scores one goal."
+        },
+        {
+          "es": "Real Madrid gana el partido.",
+          "en": "Real Madrid wins the match."
+        }
+      ],
+      "wordBank": [
+        {
+          "es": "el partido",
+          "en": "the match"
+        },
+        {
+          "es": "jugar",
+          "en": "to play"
+        },
+        {
+          "es": "contra",
+          "en": "against"
+        },
+        {
+          "es": "marcar",
+          "en": "to score"
+        },
+        {
+          "es": "el gol",
+          "en": "the goal"
+        },
+        {
+          "es": "ganar",
+          "en": "to win"
         }
       ]
     }
