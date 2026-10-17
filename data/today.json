@@ -1,26 +1,26 @@
 {
-  "date": "2026-10-12",
+  "date": "2026-10-16",
   "competition": "La Liga",
-  "generatedAt": "2026-10-13T13:50:39.959Z",
+  "generatedAt": "2026-10-17T10:21:26.201Z",
   "source": "football-data.org + Anthropic API",
   "matches": [
     {
-      "id": "2026-10-12-levante-sevilla-fc",
-      "home": "Levante",
-      "away": "Sevilla FC",
+      "id": "2026-10-16-deportivo-levante",
+      "home": "Deportivo",
+      "away": "Levante",
       "score": {
-        "home": 3,
-        "away": 3
+        "home": 1,
+        "away": 1
       },
-      "matchday": 8,
+      "matchday": 9,
       "sentences": [
         {
-          "es": "Levante juega contra Sevilla FC.",
-          "en": "Levante plays against Sevilla FC."
+          "es": "Deportivo juega contra Levante hoy.",
+          "en": "Deportivo plays against Levante today."
         },
         {
-          "es": "Levante marca tres goles y Sevilla marca tres goles.",
-          "en": "Levante scores three goals and Sevilla scores three goals."
+          "es": "Deportivo marca un gol. Levante marca un gol.",
+          "en": "Deportivo scores one goal. Levante scores one goal."
         },
         {
           "es": "El partido termina en empate.",
@@ -29,28 +29,28 @@
       ],
       "wordBank": [
         {
-          "es": "jugar",
-          "en": "to play"
-        },
-        {
-          "es": "el gol",
-          "en": "the goal"
+          "es": "el partido",
+          "en": "the match"
         },
         {
           "es": "marcar",
           "en": "to score"
         },
         {
-          "es": "terminar",
-          "en": "to end"
+          "es": "el gol",
+          "en": "the goal"
         },
         {
-          "es": "el partido",
-          "en": "the match"
+          "es": "jugar",
+          "en": "to play"
         },
         {
           "es": "el empate",
           "en": "the draw"
+        },
+        {
+          "es": "terminar",
+          "en": "to end"
         }
       ]
     }
