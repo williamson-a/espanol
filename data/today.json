@@ -1,30 +1,30 @@
 {
-  "date": "2026-10-16",
+  "date": "2026-10-17",
   "competition": "La Liga",
-  "generatedAt": "2026-10-17T10:21:26.201Z",
+  "generatedAt": "2026-10-18T10:38:41.046Z",
   "source": "football-data.org + Anthropic API",
   "matches": [
     {
-      "id": "2026-10-16-deportivo-levante",
-      "home": "Deportivo",
-      "away": "Levante",
+      "id": "2026-10-17-espanyol-atleti",
+      "home": "Espanyol",
+      "away": "Atleti",
       "score": {
-        "home": 1,
+        "home": 0,
         "away": 1
       },
       "matchday": 9,
       "sentences": [
         {
-          "es": "Deportivo juega contra Levante hoy.",
-          "en": "Deportivo plays against Levante today."
+          "es": "Espanyol juega contra Atleti en casa.",
+          "en": "Espanyol plays against Atleti at home."
         },
         {
-          "es": "Deportivo marca un gol. Levante marca un gol.",
-          "en": "Deportivo scores one goal. Levante scores one goal."
+          "es": "Atleti marca un gol en el partido.",
+          "en": "Atleti scores one goal in the match."
         },
         {
-          "es": "El partido termina en empate.",
-          "en": "The match ends in a draw."
+          "es": "Atleti gana el partido hoy.",
+          "en": "Atleti wins the match today."
         }
       ],
       "wordBank": [
@@ -41,8 +41,58 @@
           "en": "the goal"
         },
         {
+          "es": "ganar",
+          "en": "to win"
+        },
+        {
           "es": "jugar",
           "en": "to play"
+        },
+        {
+          "es": "contra",
+          "en": "against"
+        }
+      ]
+    },
+    {
+      "id": "2026-10-17-villarreal-elche",
+      "home": "Villarreal",
+      "away": "Elche",
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "matchday": 9,
+      "sentences": [
+        {
+          "es": "Villarreal juega contra Elche.",
+          "en": "Villarreal plays against Elche."
+        },
+        {
+          "es": "Los dos equipos no marcan goles.",
+          "en": "The two teams do not score goals."
+        },
+        {
+          "es": "El partido termina en empate.",
+          "en": "The match ends in a draw."
+        }
+      ],
+      "wordBank": [
+        {
+          "es": "jugar",
+          "en": "to play"
+        },
+        {
+          "es": "el gol",
+          "en": "the goal"
+        },
+        {
+          "es": "marcar",
+          "en": "to score"
+        },
+        {
+          "es": "el equipo",
+          "en": "the team"
         },
         {
           "es": "el empate",
@@ -51,6 +101,106 @@
         {
           "es": "terminar",
           "en": "to end"
+        }
+      ]
+    },
+    {
+      "id": "2026-10-17-real-betis-barca",
+      "home": "Real Betis",
+      "away": "Barça",
+      "score": {
+        "home": 2,
+        "away": 5
+      },
+      "matchday": 9,
+      "sentences": [
+        {
+          "es": "El Real Betis juega contra el Barça hoy.",
+          "en": "Real Betis plays against Barça today."
+        },
+        {
+          "es": "El Barça marca cinco goles. El Real Betis marca dos goles.",
+          "en": "Barça scores five goals. Real Betis scores two goals."
+        },
+        {
+          "es": "El Barça gana el partido cinco a dos.",
+          "en": "Barça wins the match five to two."
+        }
+      ],
+      "wordBank": [
+        {
+          "es": "el gol",
+          "en": "the goal"
+        },
+        {
+          "es": "marcar",
+          "en": "to score"
+        },
+        {
+          "es": "jugar",
+          "en": "to play"
+        },
+        {
+          "es": "ganar",
+          "en": "to win"
+        },
+        {
+          "es": "el partido",
+          "en": "the match"
+        },
+        {
+          "es": "contra",
+          "en": "against"
+        }
+      ]
+    },
+    {
+      "id": "2026-10-17-valencia-athletic",
+      "home": "Valencia",
+      "away": "Athletic",
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "matchday": 9,
+      "sentences": [
+        {
+          "es": "Valencia juega contra Athletic hoy.",
+          "en": "Valencia plays against Athletic today."
+        },
+        {
+          "es": "Valencia no marca goles. Athletic no marca goles.",
+          "en": "Valencia does not score goals. Athletic does not score goals."
+        },
+        {
+          "es": "El partido termina sin ganador.",
+          "en": "The match ends without a winner."
+        }
+      ],
+      "wordBank": [
+        {
+          "es": "jugar",
+          "en": "to play"
+        },
+        {
+          "es": "el gol",
+          "en": "the goal"
+        },
+        {
+          "es": "marcar",
+          "en": "to score"
+        },
+        {
+          "es": "el partido",
+          "en": "the match"
+        },
+        {
+          "es": "terminar",
+          "en": "to end"
+        },
+        {
+          "es": "contra",
+          "en": "against"
         }
       ]
     }
