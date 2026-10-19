@@ -1,30 +1,30 @@
 {
-  "date": "2026-10-17",
+  "date": "2026-10-18",
   "competition": "La Liga",
-  "generatedAt": "2026-10-18T10:38:41.046Z",
+  "generatedAt": "2026-10-19T12:36:15.334Z",
   "source": "football-data.org + Anthropic API",
   "matches": [
     {
-      "id": "2026-10-17-espanyol-atleti",
-      "home": "Espanyol",
-      "away": "Atleti",
+      "id": "2026-10-18-osasuna-santander",
+      "home": "Osasuna",
+      "away": "Santander",
       "score": {
-        "home": 0,
-        "away": 1
+        "home": 2,
+        "away": 0
       },
       "matchday": 9,
       "sentences": [
         {
-          "es": "Espanyol juega contra Atleti en casa.",
-          "en": "Espanyol plays against Atleti at home."
+          "es": "Osasuna juega en casa contra Santander.",
+          "en": "Osasuna plays at home against Santander."
         },
         {
-          "es": "Atleti marca un gol en el partido.",
-          "en": "Atleti scores one goal in the match."
+          "es": "Osasuna marca dos goles en el partido.",
+          "en": "Osasuna scores two goals in the match."
         },
         {
-          "es": "Atleti gana el partido hoy.",
-          "en": "Atleti wins the match today."
+          "es": "Osasuna gana dos a cero.",
+          "en": "Osasuna wins two to zero."
         }
       ],
       "wordBank": [
@@ -49,35 +49,39 @@
           "en": "to play"
         },
         {
-          "es": "contra",
-          "en": "against"
+          "es": "en casa",
+          "en": "at home"
         }
       ]
     },
     {
-      "id": "2026-10-17-villarreal-elche",
-      "home": "Villarreal",
-      "away": "Elche",
+      "id": "2026-10-18-celta-alaves",
+      "home": "Celta",
+      "away": "Alavés",
       "score": {
-        "home": 0,
-        "away": 0
+        "home": 2,
+        "away": 1
       },
       "matchday": 9,
       "sentences": [
         {
-          "es": "Villarreal juega contra Elche.",
-          "en": "Villarreal plays against Elche."
+          "es": "Celta juega en casa contra Alavés.",
+          "en": "Celta plays at home against Alavés."
         },
         {
-          "es": "Los dos equipos no marcan goles.",
-          "en": "The two teams do not score goals."
+          "es": "Celta marca dos goles y Alavés marca uno.",
+          "en": "Celta scores two goals and Alavés scores one."
         },
         {
-          "es": "El partido termina en empate.",
-          "en": "The match ends in a draw."
+          "es": "Celta gana el partido.",
+          "en": "Celta wins the match."
         }
       ],
       "wordBank": [
+        {
+          "es": "el partido",
+          "en": "the match"
+        },
         {
           "es": "jugar",
           "en": "to play"
@@ -91,23 +95,19 @@
           "en": "to score"
         },
         {
-          "es": "el equipo",
-          "en": "the team"
+          "es": "ganar",
+          "en": "to win"
         },
         {
-          "es": "el empate",
-          "en": "the draw"
-        },
-        {
-          "es": "terminar",
-          "en": "to end"
+          "es": "en casa",
+          "en": "at home"
         }
       ]
     },
     {
-      "id": "2026-10-17-real-betis-barca",
-      "home": "Real Betis",
-      "away": "Barça",
+      "id": "2026-10-18-malaga-real-sociedad",
+      "home": "Málaga",
+      "away": "Real Sociedad",
       "score": {
         "home": 2,
         "away": 5
@@ -115,16 +115,16 @@
       "matchday": 9,
       "sentences": [
         {
-          "es": "El Real Betis juega contra el Barça hoy.",
-          "en": "Real Betis plays against Barça today."
+          "es": "Málaga juega contra Real Sociedad hoy.",
+          "en": "Málaga plays against Real Sociedad today."
         },
         {
-          "es": "El Barça marca cinco goles. El Real Betis marca dos goles.",
-          "en": "Barça scores five goals. Real Betis scores two goals."
+          "es": "Real Sociedad marca cinco goles.",
+          "en": "Real Sociedad scores five goals."
         },
         {
-          "es": "El Barça gana el partido cinco a dos.",
-          "en": "Barça wins the match five to two."
+          "es": "Real Sociedad gana el partido.",
+          "en": "Real Sociedad wins the match."
         }
       ],
       "wordBank": [
@@ -155,48 +155,48 @@
       ]
     },
     {
-      "id": "2026-10-17-valencia-athletic",
-      "home": "Valencia",
-      "away": "Athletic",
+      "id": "2026-10-18-real-madrid-sevilla-fc",
+      "home": "Real Madrid",
+      "away": "Sevilla FC",
       "score": {
-        "home": 0,
-        "away": 0
+        "home": 4,
+        "away": 1
       },
       "matchday": 9,
       "sentences": [
         {
-          "es": "Valencia juega contra Athletic hoy.",
-          "en": "Valencia plays against Athletic today."
+          "es": "Real Madrid juega contra Sevilla FC.",
+          "en": "Real Madrid plays against Sevilla FC."
         },
         {
-          "es": "Valencia no marca goles. Athletic no marca goles.",
-          "en": "Valencia does not score goals. Athletic does not score goals."
+          "es": "Real Madrid marca cuatro goles, Sevilla marca uno.",
+          "en": "Real Madrid scores four goals, Sevilla scores one."
         },
         {
-          "es": "El partido termina sin ganador.",
-          "en": "The match ends without a winner."
+          "es": "Real Madrid gana el partido.",
+          "en": "Real Madrid wins the match."
         }
       ],
       "wordBank": [
         {
-          "es": "jugar",
-          "en": "to play"
+          "es": "el partido",
+          "en": "the match"
         },
         {
-          "es": "el gol",
-          "en": "the goal"
+          "es": "jugar",
+          "en": "to play"
         },
         {
           "es": "marcar",
           "en": "to score"
         },
         {
-          "es": "el partido",
-          "en": "the match"
+          "es": "el gol",
+          "en": "the goal"
         },
         {
-          "es": "terminar",
-          "en": "to end"
+          "es": "ganar",
+          "en": "to win"
         },
         {
           "es": "contra",
