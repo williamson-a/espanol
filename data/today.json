@@ -1,40 +1,36 @@
 {
-  "date": "2026-10-19",
+  "date": "2026-10-21",
   "competition": "La Liga",
-  "generatedAt": "2026-10-20T11:09:42.036Z",
+  "generatedAt": "2026-10-22T11:25:45.624Z",
   "source": "football-data.org + Anthropic API",
   "matches": [
     {
-      "id": "2026-10-19-getafe-rayo-vallecano",
-      "home": "Getafe",
-      "away": "Rayo Vallecano",
+      "id": "2026-10-21-levante-athletic",
+      "home": "Levante",
+      "away": "Athletic",
       "score": {
-        "home": 1,
+        "home": 3,
         "away": 1
       },
-      "matchday": 9,
+      "matchday": 6,
       "sentences": [
         {
-          "es": "Getafe juega en casa contra Rayo Vallecano.",
-          "en": "Getafe plays at home against Rayo Vallecano."
+          "es": "Levante juega contra Athletic hoy.",
+          "en": "Levante plays against Athletic today."
         },
         {
-          "es": "Getafe marca un gol y Rayo marca un gol.",
-          "en": "Getafe scores one goal and Rayo scores one goal."
+          "es": "Levante marca tres goles y Athletic marca uno.",
+          "en": "Levante scores three goals and Athletic scores one."
         },
         {
-          "es": "El partido termina en empate.",
-          "en": "The match ends in a draw."
+          "es": "Levante gana el partido.",
+          "en": "Levante wins the match."
         }
       ],
       "wordBank": [
         {
           "es": "el partido",
           "en": "the match"
-        },
-        {
-          "es": "jugar",
-          "en": "to play"
         },
         {
           "es": "marcar",
@@ -45,12 +41,16 @@
           "en": "the goal"
         },
         {
-          "es": "el empate",
-          "en": "the draw"
+          "es": "ganar",
+          "en": "to win"
         },
         {
-          "es": "terminar",
-          "en": "to end"
+          "es": "jugar",
+          "en": "to play"
+        },
+        {
+          "es": "contra",
+          "en": "against"
         }
       ]
     }
