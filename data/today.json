@@ -1,36 +1,40 @@
 {
-  "date": "2026-10-21",
+  "date": "2026-10-23",
   "competition": "La Liga",
-  "generatedAt": "2026-10-22T11:25:45.624Z",
+  "generatedAt": "2026-10-24T10:34:36.817Z",
   "source": "football-data.org + Anthropic API",
   "matches": [
     {
-      "id": "2026-10-21-levante-athletic",
-      "home": "Levante",
-      "away": "Athletic",
+      "id": "2026-10-23-alaves-malaga",
+      "home": "Alavés",
+      "away": "Málaga",
       "score": {
-        "home": 3,
+        "home": 1,
         "away": 1
       },
-      "matchday": 6,
+      "matchday": 10,
       "sentences": [
         {
-          "es": "Levante juega contra Athletic hoy.",
-          "en": "Levante plays against Athletic today."
+          "es": "Alavés juega contra Málaga en casa.",
+          "en": "Alavés plays against Málaga at home."
         },
         {
-          "es": "Levante marca tres goles y Athletic marca uno.",
-          "en": "Levante scores three goals and Athletic scores one."
+          "es": "Alavés marca un gol y Málaga marca un gol.",
+          "en": "Alavés scores one goal and Málaga scores one goal."
         },
         {
-          "es": "Levante gana el partido.",
-          "en": "Levante wins the match."
+          "es": "El partido es un empate.",
+          "en": "The match is a draw."
         }
       ],
       "wordBank": [
         {
           "es": "el partido",
           "en": "the match"
+        },
+        {
+          "es": "jugar",
+          "en": "to play"
         },
         {
           "es": "marcar",
@@ -41,16 +45,12 @@
           "en": "the goal"
         },
         {
-          "es": "ganar",
-          "en": "to win"
+          "es": "el empate",
+          "en": "the draw"
         },
         {
-          "es": "jugar",
-          "en": "to play"
-        },
-        {
-          "es": "contra",
-          "en": "against"
+          "es": "en casa",
+          "en": "at home"
         }
       ]
     }
