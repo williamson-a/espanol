@@ -1,56 +1,56 @@
 {
-  "date": "2026-10-26",
+  "date": "2026-10-30",
   "competition": "La Liga",
-  "generatedAt": "2026-10-27T11:49:42.355Z",
+  "generatedAt": "2026-10-31T11:54:36.632Z",
   "source": "football-data.org + Anthropic API",
   "matches": [
     {
-      "id": "2026-10-26-sevilla-fc-osasuna",
-      "home": "Sevilla FC",
-      "away": "Osasuna",
+      "id": "2026-10-30-villarreal-espanyol",
+      "home": "Villarreal",
+      "away": "Espanyol",
       "score": {
-        "home": 2,
-        "away": 0
+        "home": 0,
+        "away": 1
       },
-      "matchday": 10,
+      "matchday": 11,
       "sentences": [
         {
-          "es": "Sevilla FC juega contra Osasuna hoy.",
-          "en": "Sevilla FC plays against Osasuna today."
+          "es": "Villarreal juega contra Espanyol en casa.",
+          "en": "Villarreal plays against Espanyol at home."
         },
         {
-          "es": "Sevilla marca dos goles en el partido.",
-          "en": "Sevilla scores two goals in the match."
+          "es": "Espanyol marca un gol en el partido.",
+          "en": "Espanyol scores one goal in the match."
         },
         {
-          "es": "Sevilla gana dos a cero.",
-          "en": "Sevilla wins two to zero."
+          "es": "Espanyol gana el partido hoy.",
+          "en": "Espanyol wins the match today."
         }
       ],
       "wordBank": [
         {
-          "es": "jugar",
-          "en": "to play"
+          "es": "el partido",
+          "en": "the match"
         },
         {
-          "es": "el gol",
-          "en": "the goal"
+          "es": "jugar",
+          "en": "to play"
         },
         {
           "es": "marcar",
           "en": "to score"
         },
         {
+          "es": "el gol",
+          "en": "the goal"
+        },
+        {
           "es": "ganar",
           "en": "to win"
         },
         {
-          "es": "el partido",
-          "en": "the match"
-        },
-        {
-          "es": "contra",
-          "en": "against"
+          "es": "en casa",
+          "en": "at home"
         }
       ]
     }
