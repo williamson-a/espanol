@@ -1,94 +1,44 @@
 {
-  "date": "2026-10-31",
+  "date": "2026-11-01",
   "competition": "La Liga",
-  "generatedAt": "2026-11-01T12:54:26.501Z",
+  "generatedAt": "2026-11-02T15:08:52.660Z",
   "source": "football-data.org + Anthropic API",
   "matches": [
     {
-      "id": "2026-10-31-levante-atleti",
-      "home": "Levante",
-      "away": "Atleti",
-      "score": {
-        "home": 0,
-        "away": 2
-      },
-      "matchday": 11,
-      "sentences": [
-        {
-          "es": "Levante juega contra Atleti en casa.",
-          "en": "Levante plays against Atleti at home."
-        },
-        {
-          "es": "Atleti marca dos goles en el partido.",
-          "en": "Atleti scores two goals in the match."
-        },
-        {
-          "es": "Atleti gana el partido contra Levante.",
-          "en": "Atleti wins the match against Levante."
-        }
-      ],
-      "wordBank": [
-        {
-          "es": "el partido",
-          "en": "the match"
-        },
-        {
-          "es": "el gol",
-          "en": "the goal"
-        },
-        {
-          "es": "marcar",
-          "en": "to score"
-        },
-        {
-          "es": "jugar",
-          "en": "to play"
-        },
-        {
-          "es": "ganar",
-          "en": "to win"
-        },
-        {
-          "es": "contra",
-          "en": "against"
-        }
-      ]
-    },
-    {
-      "id": "2026-10-31-rayo-vallecano-celta",
-      "home": "Rayo Vallecano",
-      "away": "Celta",
+      "id": "2026-11-01-getafe-sevilla-fc",
+      "home": "Getafe",
+      "away": "Sevilla FC",
       "score": {
         "home": 3,
-        "away": 0
+        "away": 1
       },
       "matchday": 11,
       "sentences": [
         {
-          "es": "Rayo Vallecano juega contra Celta hoy.",
-          "en": "Rayo Vallecano plays against Celta today."
+          "es": "Getafe juega contra Sevilla en casa.",
+          "en": "Getafe plays against Sevilla at home."
         },
         {
-          "es": "Rayo Vallecano marca tres goles.",
-          "en": "Rayo Vallecano scores three goals."
+          "es": "Getafe marca tres goles y Sevilla marca uno.",
+          "en": "Getafe scores three goals and Sevilla scores one."
         },
         {
-          "es": "Rayo Vallecano gana el partido.",
-          "en": "Rayo Vallecano wins the match."
+          "es": "Getafe gana el partido hoy.",
+          "en": "Getafe wins the match today."
         }
       ],
       "wordBank": [
         {
-          "es": "el gol",
-          "en": "the goal"
+          "es": "el partido",
+          "en": "the match"
         },
         {
           "es": "marcar",
           "en": "to score"
         },
         {
-          "es": "el partido",
-          "en": "the match"
+          "es": "el gol",
+          "en": "the goal"
         },
         {
           "es": "ganar",
@@ -105,9 +55,109 @@
       ]
     },
     {
-      "id": "2026-10-31-real-betis-malaga",
-      "home": "Real Betis",
-      "away": "Málaga",
+      "id": "2026-11-01-santander-real-madrid",
+      "home": "Santander",
+      "away": "Real Madrid",
+      "score": {
+        "home": 0,
+        "away": 3
+      },
+      "matchday": 11,
+      "sentences": [
+        {
+          "es": "Santander juega contra Real Madrid.",
+          "en": "Santander plays against Real Madrid."
+        },
+        {
+          "es": "Real Madrid marca tres goles.",
+          "en": "Real Madrid scores three goals."
+        },
+        {
+          "es": "Real Madrid gana el partido.",
+          "en": "Real Madrid wins the match."
+        }
+      ],
+      "wordBank": [
+        {
+          "es": "jugar",
+          "en": "to play"
+        },
+        {
+          "es": "el gol",
+          "en": "the goal"
+        },
+        {
+          "es": "marcar",
+          "en": "to score"
+        },
+        {
+          "es": "ganar",
+          "en": "to win"
+        },
+        {
+          "es": "el partido",
+          "en": "the match"
+        },
+        {
+          "es": "contra",
+          "en": "against"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-01-elche-valencia",
+      "home": "Elche",
+      "away": "Valencia",
+      "score": {
+        "home": 0,
+        "away": 1
+      },
+      "matchday": 11,
+      "sentences": [
+        {
+          "es": "Elche juega contra Valencia en casa.",
+          "en": "Elche plays against Valencia at home."
+        },
+        {
+          "es": "Valencia marca un gol en el partido.",
+          "en": "Valencia scores one goal in the match."
+        },
+        {
+          "es": "Valencia gana el partido hoy.",
+          "en": "Valencia wins the match today."
+        }
+      ],
+      "wordBank": [
+        {
+          "es": "el partido",
+          "en": "the match"
+        },
+        {
+          "es": "marcar",
+          "en": "to score"
+        },
+        {
+          "es": "el gol",
+          "en": "the goal"
+        },
+        {
+          "es": "ganar",
+          "en": "to win"
+        },
+        {
+          "es": "jugar",
+          "en": "to play"
+        },
+        {
+          "es": "contra",
+          "en": "against"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-01-athletic-real-sociedad",
+      "home": "Athletic",
+      "away": "Real Sociedad",
       "score": {
         "home": 2,
         "away": 1
@@ -115,66 +165,16 @@
       "matchday": 11,
       "sentences": [
         {
-          "es": "Real Betis juega contra Málaga hoy.",
-          "en": "Real Betis plays against Málaga today."
+          "es": "Athletic juega contra Real Sociedad en casa.",
+          "en": "Athletic plays against Real Sociedad at home."
         },
         {
-          "es": "Real Betis marca dos goles. Málaga marca un gol.",
-          "en": "Real Betis scores two goals. Málaga scores one goal."
+          "es": "Athletic marca dos goles y Real Sociedad marca uno.",
+          "en": "Athletic scores two goals and Real Sociedad scores one."
         },
         {
-          "es": "Real Betis gana el partido.",
-          "en": "Real Betis wins the match."
-        }
-      ],
-      "wordBank": [
-        {
-          "es": "el partido",
-          "en": "the match"
-        },
-        {
-          "es": "marcar",
-          "en": "to score"
-        },
-        {
-          "es": "el gol",
-          "en": "the goal"
-        },
-        {
-          "es": "ganar",
-          "en": "to win"
-        },
-        {
-          "es": "jugar",
-          "en": "to play"
-        },
-        {
-          "es": "contra",
-          "en": "against"
-        }
-      ]
-    },
-    {
-      "id": "2026-10-31-barca-alaves",
-      "home": "Barça",
-      "away": "Alavés",
-      "score": {
-        "home": 6,
-        "away": 1
-      },
-      "matchday": 11,
-      "sentences": [
-        {
-          "es": "Barcelona juega contra Alavés en casa.",
-          "en": "Barcelona plays against Alavés at home."
-        },
-        {
-          "es": "Barcelona marca seis goles. Alavés marca un gol.",
-          "en": "Barcelona scores six goals. Alavés scores one goal."
-        },
-        {
-          "es": "Barcelona gana el partido.",
-          "en": "Barcelona wins the match."
+          "es": "Athletic gana el partido.",
+          "en": "Athletic wins the match."
         }
       ],
       "wordBank": [
@@ -187,16 +187,16 @@
           "en": "to score"
         },
         {
-          "es": "jugar",
-          "en": "to play"
-        },
-        {
           "es": "ganar",
           "en": "to win"
         },
         {
           "es": "el partido",
           "en": "the match"
+        },
+        {
+          "es": "jugar",
+          "en": "to play"
         },
         {
           "es": "contra",
