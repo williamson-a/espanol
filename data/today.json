@@ -1,56 +1,52 @@
 {
-  "date": "2026-11-02",
+  "date": "2026-11-06",
   "competition": "La Liga",
-  "generatedAt": "2026-11-03T13:52:12.598Z",
+  "generatedAt": "2026-11-07T12:41:21.331Z",
   "source": "football-data.org + Anthropic API",
   "matches": [
     {
-      "id": "2026-11-02-deportivo-osasuna",
-      "home": "Deportivo",
-      "away": "Osasuna",
+      "id": "2026-11-06-sevilla-fc-alaves",
+      "home": "Sevilla FC",
+      "away": "Alavés",
       "score": {
-        "home": 2,
-        "away": 1
+        "home": 0,
+        "away": 0
       },
-      "matchday": 11,
+      "matchday": 12,
       "sentences": [
         {
-          "es": "Deportivo juega contra Osasuna en casa.",
-          "en": "Deportivo plays against Osasuna at home."
+          "es": "El Sevilla juega contra el Alavés hoy.",
+          "en": "Sevilla plays against Alavés today."
         },
         {
-          "es": "Deportivo marca dos goles. Osasuna marca un gol.",
-          "en": "Deportivo scores two goals. Osasuna scores one goal."
+          "es": "Los dos equipos no marcan goles.",
+          "en": "The two teams do not score goals."
         },
         {
-          "es": "Deportivo gana el partido.",
-          "en": "Deportivo wins the match."
+          "es": "El partido termina en empate cero cero.",
+          "en": "The match ends in a zero zero draw."
         }
       ],
       "wordBank": [
         {
-          "es": "el partido",
-          "en": "the match"
-        },
-        {
           "es": "jugar",
           "en": "to play"
-        },
-        {
-          "es": "marcar",
-          "en": "to score"
         },
         {
           "es": "el gol",
           "en": "the goal"
         },
         {
-          "es": "ganar",
-          "en": "to win"
+          "es": "marcar",
+          "en": "to score"
         },
         {
-          "es": "contra",
-          "en": "against"
+          "es": "el partido",
+          "en": "the match"
+        },
+        {
+          "es": "el empate",
+          "en": "the draw"
         }
       ]
     }
