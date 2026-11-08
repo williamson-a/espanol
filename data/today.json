@@ -1,13 +1,63 @@
 {
-  "date": "2026-11-06",
+  "date": "2026-11-07",
   "competition": "La Liga",
-  "generatedAt": "2026-11-07T12:41:21.331Z",
+  "generatedAt": "2026-11-08T12:58:44.049Z",
   "source": "football-data.org + Anthropic API",
   "matches": [
     {
-      "id": "2026-11-06-sevilla-fc-alaves",
-      "home": "Sevilla FC",
-      "away": "Alavés",
+      "id": "2026-11-07-malaga-santander",
+      "home": "Málaga",
+      "away": "Santander",
+      "score": {
+        "home": 1,
+        "away": 2
+      },
+      "matchday": 12,
+      "sentences": [
+        {
+          "es": "Málaga juega contra Santander en casa.",
+          "en": "Málaga plays against Santander at home."
+        },
+        {
+          "es": "Santander marca dos goles. Málaga marca un gol.",
+          "en": "Santander scores two goals. Málaga scores one goal."
+        },
+        {
+          "es": "Santander gana el partido.",
+          "en": "Santander wins the match."
+        }
+      ],
+      "wordBank": [
+        {
+          "es": "el partido",
+          "en": "the match"
+        },
+        {
+          "es": "el gol",
+          "en": "the goal"
+        },
+        {
+          "es": "marcar",
+          "en": "to score"
+        },
+        {
+          "es": "ganar",
+          "en": "to win"
+        },
+        {
+          "es": "jugar",
+          "en": "to play"
+        },
+        {
+          "es": "contra",
+          "en": "against"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-07-espanyol-deportivo",
+      "home": "Espanyol",
+      "away": "Deportivo",
       "score": {
         "home": 0,
         "away": 0
@@ -15,16 +65,16 @@
       "matchday": 12,
       "sentences": [
         {
-          "es": "El Sevilla juega contra el Alavés hoy.",
-          "en": "Sevilla plays against Alavés today."
+          "es": "Espanyol juega contra Deportivo hoy.",
+          "en": "Espanyol plays against Deportivo today."
         },
         {
           "es": "Los dos equipos no marcan goles.",
           "en": "The two teams do not score goals."
         },
         {
-          "es": "El partido termina en empate cero cero.",
-          "en": "The match ends in a zero zero draw."
+          "es": "El partido termina en empate.",
+          "en": "The match ends in a draw."
         }
       ],
       "wordBank": [
@@ -47,6 +97,106 @@
         {
           "es": "el empate",
           "en": "the draw"
+        },
+        {
+          "es": "terminar",
+          "en": "to end"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-07-osasuna-athletic",
+      "home": "Osasuna",
+      "away": "Athletic",
+      "score": {
+        "home": 1,
+        "away": 1
+      },
+      "matchday": 12,
+      "sentences": [
+        {
+          "es": "Osasuna juega contra Athletic en casa.",
+          "en": "Osasuna plays against Athletic at home."
+        },
+        {
+          "es": "Osasuna marca un gol y Athletic marca un gol.",
+          "en": "Osasuna scores one goal and Athletic scores one goal."
+        },
+        {
+          "es": "El partido termina en empate uno a uno.",
+          "en": "The match ends in a draw one to one."
+        }
+      ],
+      "wordBank": [
+        {
+          "es": "el partido",
+          "en": "the match"
+        },
+        {
+          "es": "jugar",
+          "en": "to play"
+        },
+        {
+          "es": "marcar",
+          "en": "to score"
+        },
+        {
+          "es": "el gol",
+          "en": "the goal"
+        },
+        {
+          "es": "el empate",
+          "en": "the draw"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-07-valencia-real-madrid",
+      "home": "Valencia",
+      "away": "Real Madrid",
+      "score": {
+        "home": 0,
+        "away": 3
+      },
+      "matchday": 12,
+      "sentences": [
+        {
+          "es": "Valencia juega contra Real Madrid.",
+          "en": "Valencia plays against Real Madrid."
+        },
+        {
+          "es": "Real Madrid marca tres goles.",
+          "en": "Real Madrid scores three goals."
+        },
+        {
+          "es": "Real Madrid gana el partido.",
+          "en": "Real Madrid wins the match."
+        }
+      ],
+      "wordBank": [
+        {
+          "es": "jugar",
+          "en": "to play"
+        },
+        {
+          "es": "el gol",
+          "en": "the goal"
+        },
+        {
+          "es": "marcar",
+          "en": "to score"
+        },
+        {
+          "es": "ganar",
+          "en": "to win"
+        },
+        {
+          "es": "el partido",
+          "en": "the match"
+        },
+        {
+          "es": "contra",
+          "en": "against"
         }
       ]
     }
